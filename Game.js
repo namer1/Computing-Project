@@ -57,6 +57,5 @@ var game = {
             this.render.fillText(scoring.score, this.canvas.width - 250,50)
 
         }
-        alert("hi");
     }
 }
