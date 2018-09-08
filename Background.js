@@ -12,7 +12,7 @@ var background = {
         this.wave.src = BACKGROUND_IMAGE;
         this.wave2.src = BACKGROUND_IMAGE2;
         this.sea.src = SEA;
-        this.day.src = DAY_OBJECTS;
+        this.day.src = MORN_OBJECTS;
         this.backgroundSwitch = false;
     },
     scrollX : function(){

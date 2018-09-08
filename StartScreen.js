@@ -10,6 +10,7 @@ var startScreen = {
         };
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);
+            render.font = "30px Arial";
             render.fillText("Start", this.rect.x + this.rect.w/2, this.rect.y + this.rect.h/2);
             document.addEventListener('click', this.checkStart.bind(this));
         }.bind(this)

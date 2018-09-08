@@ -1,0 +1,7 @@
+cd ______________________________________ --> folder location
+
+git add . --> add all of the changes made
+
+git commit -m "message" --> message for the user in github
+
+git push --> update github
