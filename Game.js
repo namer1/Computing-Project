@@ -55,7 +55,6 @@ var game = {
             this.render.font = "30px Arial";
             this.render.fillText(timer.format(),this.canvas.width-150,50)
             this.render.fillText(scoring.score, this.canvas.width - 250,50)
-
         }
     }
 }
