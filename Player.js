@@ -19,7 +19,6 @@ var player = {
     },
     changeImage : function(newImage){
         this.currentImg = newImage; 
-        
     },
     keyPress : function(){
         document.addEventListener("keydown", function(event){
@@ -32,20 +31,7 @@ var player = {
             if (event.keyCode == LEFT_ARROW){ 
                 this.previousImage();
                 if (this.inWater){
-                    switch(this.currentImg){
-                        case 19: case 20: case 21:
-                        this.speedY = -7.5; break;
-                        case 22: case 23: case 24:
-                        this.speedY = -6.5; break;
-                        case 25: case 26: case 27:
-                        this.speedY = -5.5; break;
-                        case 28: case 29: case 30:
-                        this.speedY = -4.5; break;
-                        case 31: case 32: case 33:
-                        this.speedY = -3.5; break;
-                        case 34: case 35:
-                        this.speedY = -2.5; break;
-                    }
+                    this.speedY = LEFT_ARROW_SPEED[this.currentImg]
                 }
             }
             if (event.keyCode == RIGHT_ARROW){ 
@@ -82,7 +68,6 @@ var player = {
         else {
             this.currentImg = PLAYER_MAX;
         }
-        // PLAYER UNABLE TO GO BEYOND A CERTAIN PICTURE WHILE IN THE WATER (ISN'T ALLOWED BETWEEN 9 & 27)
     },
     enterWater : function(){
         if(this.y >= WAVE_POSITION - 20 && !this.inWater){
@@ -123,3 +108,4 @@ var player = {
         }
     }
 }
+// NEED TO MOVE ALL OF THE SWITCH AND NUMBERS FROM FILE
