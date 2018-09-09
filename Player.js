@@ -37,18 +37,7 @@ var player = {
             if (event.keyCode == RIGHT_ARROW){ 
                 this.nextImage();
                 if (this.inWater){
-                    switch(this.currentImg){
-                        case 1: case 2: 
-                        this.speedY = 0.5; break;
-                        case 3: case 4: 
-                        this.speedY = 1.5; break;
-                        case 5: case 6:
-                        this.speedY = 2.5; break;
-                        case 7: case 8:
-                        this.speedY = 3.5; break;
-                        case 9:
-                        this.speedY = 4.5;break;
-                    }
+                    this.speedY = RIGHT_ARROW_SPEED[this.currentImg]
                 }
             }
         }.bind(this));
@@ -77,14 +66,7 @@ var player = {
                 timer.stop();
                 game.gameOver = true;
             }
-            switch(this.currentImg){
-                case 1: case 2: case 3:
-                this.speedY = 1; break;
-                case 4: case 5: case 6:
-                this.speedY = 2; break;
-                case 7: case 8: case 9:
-                this.speedY = 3; break;
-            }
+            this.speedY = ENTER_WATER_SPEED[this.currentImg]
             this.inWater = true;
             if(scoring.numberOfLoops > 0){
                 this.speedY *= 2.5; 
