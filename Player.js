@@ -32,6 +32,8 @@ var player = {
             if (event.keyCode == LEFT_ARROW){ 
                 this.previousImage();
                 if (this.inWater){
+                    console.log(ARROW_SPEED[this.currentImg]);
+                    console.log(this.currentImg);
                     this.speedY = ARROW_SPEED[this.currentImg];
                 }
             }
