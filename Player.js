@@ -33,12 +33,14 @@ var player = {
                 this.previousImage();
                 if (this.inWater){
                     this.speedY = LEFT_ARROW_SPEED[this.currentImg];
+                    console.log("hello");
                 }
             }
             if (event.keyCode == RIGHT_ARROW){ 
                 this.nextImage();
                 if (this.inWater){
                     this.speedY = RIGHT_ARROW_SPEED[this.currentImg];
+                    console.log("hello");
                 }
             }
         }.bind(this));
