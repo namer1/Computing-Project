@@ -32,8 +32,6 @@ var player = {
             if (event.keyCode == LEFT_ARROW){ 
                 this.previousImage();
                 if (this.inWater){
-                    console.log(ARROW_SPEED[this.currentImg]);
-                    console.log(this.currentImg);
                     this.speedY = ARROW_SPEED[this.currentImg];
                 }
             }
@@ -66,11 +64,11 @@ var player = {
         if(this.y >= WAVE_POSITION - 20 && !this.inWater){
             scoring.outAir();
             if (crush.isUnderWave() || this.currentImg > 9 ){
-                alert("CRUSHED")
-                timer.stop();
-                game.gameOver = true;
+                gameOver.over()
             }
-            this.speedY = ENTER_WATER_SPEED[this.currentImg];
+            if (ENTER_WATER_SPEED[this.currentImg]) {
+                this.speedY = ENTER_WATER_SPEED[this.currentImg];
+            }
 
             this.inWater = true;
             if(scoring.numberOfLoops > 0){
