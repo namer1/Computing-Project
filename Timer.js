@@ -1,5 +1,6 @@
 var timer = {
     init : function(lvlLength){
+        this.lvlLength = lvlLength;
         this.currentTime = lvlLength;
         this.paused = false;
         this.start();
