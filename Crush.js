@@ -12,9 +12,7 @@ var crush = {
     },
     crushBedrock : function(){
         if(player.y >= game.canvas.height-70){
-            alert("Crushed");
-            timer.stop();
-            game.gameOver = true;
+            gameOver.over()
         }
     }
 }
