@@ -45,10 +45,7 @@ var player = {
     },
     nextImage : function () {
         if(this.currentImg < PLAYER_MAX){
-            if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
-                // once true, there is nothing to get it out of the if statement
-            }
-            else{
+            if(this.currentImg != 9 || !this.inWater){
                 this.currentImg++;
             }
         }
@@ -58,10 +55,7 @@ var player = {
     },
     previousImage : function () {
         if(this.currentImg > PLAYER_MIN){
-            if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
-                // once true, there is nothing to get it out of the if statement
-            }
-            else{
+            if(this.currentImg != 27 || !this.inWater){
                 this.currentImg--;
             }
         }
