@@ -45,7 +45,12 @@ var player = {
     },
     nextImage : function () {
         if(this.currentImg < PLAYER_MAX){
-            this.currentImg++;
+            if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
+                
+            }
+            else{
+                this.currentImg++;
+            }
         }
         else {
             this.currentImg = PLAYER_MIN;
@@ -53,7 +58,12 @@ var player = {
     },
     previousImage : function () {
         if(this.currentImg > PLAYER_MIN){
-            this.currentImg--;
+            if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
+
+            }
+            else{
+                this.currentImg--;
+            }
         }
         else {
             this.currentImg = PLAYER_MAX;
