@@ -46,7 +46,7 @@ var player = {
     nextImage : function () {
         if(this.currentImg < PLAYER_MAX){
             if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
-                
+                // once true, there is nothing to get it out of the if statement
             }
             else{
                 this.currentImg++;
@@ -59,7 +59,7 @@ var player = {
     previousImage : function () {
         if(this.currentImg > PLAYER_MIN){
             if(this.currentImg == 9 || this.currentImg == 27 && this.inWater){
-
+                // once true, there is nothing to get it out of the if statement
             }
             else{
                 this.currentImg--;
@@ -68,7 +68,6 @@ var player = {
         else {
             this.currentImg = PLAYER_MAX;
         }
-        // MAKE IT SO THAT PLAYER IS UNABLE TO GO BEYOND A CERTAIN PICTURE WHILE IN THE WATER (ISN'T ALLOWED BETWEEN 9 & 27)
     },
     enterWater : function(){
         if(this.y >= WAVE_POSITION - 20 && !this.inWater){
