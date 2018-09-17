@@ -1,6 +1,6 @@
 var crush = {
     init : function(){
-        this.x = -3000 - Math.random()*6000;
+        this.x = -4000 - Math.random()*6000;
         this.crushing = new Image();
         this.crushing.src = BACKGROUND_IMAGE_CRUSH;
     },
