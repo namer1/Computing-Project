@@ -6,6 +6,7 @@ var scoring = {
         this.timeAirInterval = false;
         this.underWaveInterval = false;
         this.numberOfLoops = 0;
+        this.overallNumberOfLoops = 0;
         this.resetLoopPositions();
     },
     inAir : function(){
