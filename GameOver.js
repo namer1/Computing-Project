@@ -6,6 +6,6 @@ var gameOver ={
         if (name == null || name == ""){
             name = 'Anonymous'
         }
-        server.saveScore(name, scoring.score, timer.lvlLength - timer.currentTime)
+        server.saveScore(name, scoring.score, timer.lvlLength - timer.currentTime, scoring.overallNumberOfLoop)
     }
 }
