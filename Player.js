@@ -93,7 +93,7 @@ var player = {
         }
         if(scoring.loopPositions.indexOf(false) == -1){ // if there are no false in the list then it will give -1. indexOf checks the position of an item in a list
             scoring.numberOfLoops++;
-            scoring.overallNumberOfLoop++;
+            scoring.overallNumberOfLoops++;
             scoring.resetLoopPositions();
         }
     }
