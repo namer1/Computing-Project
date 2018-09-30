@@ -13,5 +13,10 @@ var lvls = [{
     wave: WAVE_CRUSH_NOON,
     shouldLoadWave: true,
 }, {
-
+    sea: SEA_NIGHT,
+    background1: BACKGROUND_NIGHT,
+    background2: BACKGROUND_NIGHT2,
+    day: NIGHT_OBJECTS,
+    wave: WAVE_CRUSH_NIGHT,
+    shouldLoadWave: true,
 }]
