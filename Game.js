@@ -1,16 +1,22 @@
 var game = {
-    start : function(){
+    gameOver: false,
+    currentLvl: -1,
+    init : function(){
         this.canvas = document.getElementById("Game");
         this.render = this.canvas.getContext("2d"); //allows to draw to the screen
         this.gameLoop = setInterval(this.draw.bind(this), 20); // 20 miliseconds per interval. BIND connects to the game variable
         this.backgroundSwitcher = setInterval(background.switch.bind(background), 200); // for the change in the waves
         player.keyPress();
-        background.init();
-        timer.init(60);
-        scoring.init();
-        crush.init();
         window.addEventListener("resize", startScreen.calculateCanvas.bind(startScreen))
-        this.gameOver = false;
+    },
+    startLevel: function() {
+        this.currentLvl++;
+        background.init();
+        timer.init(30);
+        scoring.init();
+        if (lvls[game.currentLvl].shouldLoadWave) {
+            crush.init();
+        }
     },
     update : function(){
         background.scrollX();
@@ -51,7 +57,9 @@ var game = {
         else {
             this.update();
             this.render.drawImage(player.images[player.currentImg], player.x, player.y);
-            this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
+            if (crush.crushing) {
+                this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
+            }
             this.render.font = "30px Arial";
             this.render.fillText(timer.format(),this.canvas.width-150,50)
             this.render.fillText(scoring.score, this.canvas.width - 250,50)

@@ -9,10 +9,10 @@ var background = {
         this.wave.onload = function() {
             this.scrollX();
         }.bind(this);
-        this.wave.src = BACKGROUND_IMAGE;
-        this.wave2.src = BACKGROUND_IMAGE2;
-        this.sea.src = SEA;
-        this.day.src = MORN_OBJECTS;
+        this.wave.src = lvls[game.currentLvl].background1;
+        this.wave2.src = lvls[game.currentLvl].background2;
+        this.sea.src = lvls[game.currentLvl].sea;
+        this.day.src = lvls[game.currentLvl].day;
         this.backgroundSwitch = false;
     },
     scrollX : function(){

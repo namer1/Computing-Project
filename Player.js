@@ -11,7 +11,8 @@ var player = {
             this.images[i] = new Image();
             this.images[i].onload = function(i) {
                 if (i == number - 1){
-                    game.start();
+                    game.init();
+                    game.startLevel();
                 }
             }.bind(this, i);
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;

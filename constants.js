@@ -1,10 +1,15 @@
 var BACKGROUND_SCROLL_X = 5;
-var BACKGROUND_IMAGE = 'sprites/Background/gameScreen/morning/BackgroundMorning(1).png';
-var BACKGROUND_IMAGE2 = 'sprites/Background/gameScreen/morning/BackgroundMorning(2).png'
-var SEA = 'sprites/Background/gameScreen/morning/morningSea.png';
+var BACKGROUND_MORN = 'sprites/Background/gameScreen/morning/BackgroundMorning(1).png';
+var BACKGROUND_MORN2 = 'sprites/Background/gameScreen/morning/BackgroundMorning(2).png'
+var SEA_MORN = 'sprites/Background/gameScreen/morning/morningSea.png';
 var MORN_OBJECTS = 'sprites/Background/gameScreen/morning/morningObjects.png';
-var BACKGROUND_IMAGE_CRUSH = 'sprites/Background/gameScreen/morning/crushingWaveMorning.png';
+var WAVE_CRUSH_MORN = 'sprites/Background/gameScreen/morning/crushingWaveMorning.png';
 var START_SCREEN_BG = 'sprites/Background/startScreen/startSreenBackground.png';
+var SEA_NOON = 'sprites/Background/gameScreen/afternoon/afternoonSea.png' ;
+var BACKGROUND_NOON = 'sprites/Background/gameScreen/afternoon/BackgroundAfternoon(1).png';
+var BACKGROUND_NOON2 = 'sprites/Background/gameScreen/afternoon/BackgroundAfternoon(2).png';
+var WAVE_CRUSH_NOON = 'sprites/Background/gameScreen/afternoon/crushingWaveAfternoon.png';
+var NOON_OBJECTS = 'sprites/Background/gameScreen/afternoon/afternoonObjects.png';
 
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;

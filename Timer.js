@@ -10,9 +10,9 @@ var timer = {
     },
     tick : function(){
         if (this.currentTime == 0){
-            alert("Win");
-            gameOver.over();
             this.stop();
+            alert("Go to next level");
+            game.startLevel();
         }
         else{
             this.currentTime -= 1;
