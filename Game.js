@@ -12,7 +12,7 @@ var game = {
     startLevel: function() {
         this.currentLvl++;
         background.init();
-        timer.init(30);
+        timer.init(10);
         scoring.init();
         if (lvls[game.currentLvl].shouldLoadWave) {
             crush.init();
