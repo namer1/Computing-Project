@@ -17,7 +17,7 @@ var SEA_NIGHT = 'sprites/Background/gameScreen/night/nightSea.png';
 var BACKGROUND_NIGHT = 'sprites/Background/gameScreen/night/Background(1).png';
 var BACKGROUND_NIGHT2 = 'sprites/Background/gameScreen/night/Background(2).png';
 var WAVE_CRUSH_NIGHT =  'sprites/Background/gameScreen/night/crushingWave.png';
-var NIGHT_OBJECTS ='';
+var NIGHT_OBJECTS ='sprites/Background/gameScreen/night/nightObjects.png';
 
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;
