@@ -19,6 +19,9 @@ var BACKGROUND_NIGHT2 = 'sprites/Background/gameScreen/night/Background(2).png';
 var WAVE_CRUSH_NIGHT =  'sprites/Background/gameScreen/night/crushingWave.png';
 var NIGHT_OBJECTS ='sprites/Background/gameScreen/night/nightObjects.png';
 
+var DOLPHIN_FOLDER = 'sprites/Background/gameScreen/animals/Dolphin';
+var SHARK_FOLDER = 'sprites/Background/gameScreen/animals/Shark';
+
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;
 

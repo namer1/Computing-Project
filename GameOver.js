@@ -2,10 +2,14 @@ var gameOver ={
     over : function(){
         timer.stop();
         game.gameOver = true;
-        var name = prompt("What is your name? ");
-        if (name == null || name == ""){
-            name = 'Anonymous'
+        var find_user = document.cookie.split('user_id=')[1];
+        var name = null;
+        if (!find_user) { // asks for the name only if there is no user_id
+            name = prompt("What is your name? ");
+            if (name == null || name == ""){
+                name = 'Anonymous'
+            }
         }
-        server.saveScore(name, scoring.score, timer.lvlLength - timer.currentTime, scoring.overallNumberOfLoop)
+        server.saveScore(name, scoring.score, game.currentLvl+1)
     }
 }

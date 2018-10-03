@@ -1,21 +1,28 @@
 var game = {
     gameOver: false,
     currentLvl: -1,
-    init : function(){
+    init : function(){ // only happen once
         this.canvas = document.getElementById("Game");
         this.render = this.canvas.getContext("2d"); //allows to draw to the screen
         this.gameLoop = setInterval(this.draw.bind(this), 20); // 20 miliseconds per interval. BIND connects to the game variable
         this.backgroundSwitcher = setInterval(background.switch.bind(background), 200); // for the change in the waves
         player.keyPress();
         window.addEventListener("resize", startScreen.calculateCanvas.bind(startScreen))
-    },
-    startLevel: function() {
-        this.currentLvl++;
-        background.init();
-        timer.init(10);
         scoring.init();
-        if (lvls[game.currentLvl].shouldLoadWave) {
-            crush.init();
+    },
+    startLevel: function() { // happens at the begnning of every level
+        if (this.currentLvl < lvls.length-1){
+            this.currentLvl++;
+            background.init();
+            timer.init(15); // how long the level is
+            if (lvls[game.currentLvl].shouldLoadWave) {
+                crush.init();
+            }
+            this.animals = [];
+            this.animals.push(new Animal());
+        }
+        else{
+            gameOver.over();
         }
     },
     update : function(){
@@ -29,6 +36,7 @@ var game = {
         background.scrollY();
         crush.move();
         player.loop();
+        this.animals.forEach(function(a){ a.move(); })
     },
     clear : function(){
         this.render.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -50,6 +58,11 @@ var game = {
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x + background.wave2.width,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
         }
+        this.animals.forEach(function(a){
+            var img = a.images[a.imgNumber];
+            this.render.drawImage(img, 0,0, img.width, img.height, a.x, 200, img.width, img.height);
+        }.bind(this))
+
 
         if (this.gameOver) {
             this.render.fillText("Game over",50,50)
