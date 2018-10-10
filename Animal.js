@@ -27,7 +27,6 @@ class Animal { // everything will be run each time for every animal
             this.imgNumber++;
         } 
     }
-
     move(){
         this.x -= 5;
     }
