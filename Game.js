@@ -65,7 +65,7 @@ var game = {
 
 
         if (this.gameOver) {
-            this.render.fillText("Game over",50,50)
+            gameOver.display();
         }
         else {
             this.update();
@@ -79,5 +79,5 @@ var game = {
             this.render.fillText(scoring.score, this.canvas.width - 250,50);   
             
         }
-    }
+    },
 }

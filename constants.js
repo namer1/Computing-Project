@@ -1,5 +1,6 @@
 var BACKGROUND_SCROLL_X = 5;
 var START_SCREEN_BG = 'sprites/Background/startScreen/startSreenBackground.png';
+var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';
 
 var BACKGROUND_MORN = 'sprites/Background/gameScreen/morning/BackgroundMorning(1).png';
 var BACKGROUND_MORN2 = 'sprites/Background/gameScreen/morning/BackgroundMorning(2).png'
