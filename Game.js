@@ -74,8 +74,9 @@ var game = {
                 this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
             }
             this.render.font = "30px Arial";
-            this.render.fillText(timer.format(),this.canvas.width-150,50)
-            this.render.fillText(scoring.score, this.canvas.width - 250,50)
+            this.render.fillText(timer.format(),this.canvas.width-150,50);
+            this.render.fillText(scoring.score, this.canvas.width - 250,50);
+            
         }
     }
 }
