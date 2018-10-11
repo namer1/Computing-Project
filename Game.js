@@ -14,7 +14,7 @@ var game = {
         if (this.currentLvl < lvls.length-1){
             this.currentLvl++;
             background.init();
-            timer.init(5); // how long the level is
+            timer.init(lvls[game.currentLvl].time); // how long the level is
             if (lvls[game.currentLvl].shouldLoadWave) {
                 crush.init();
             }
