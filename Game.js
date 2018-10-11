@@ -14,7 +14,7 @@ var game = {
         if (this.currentLvl < lvls.length-1){
             this.currentLvl++;
             background.init();
-            timer.init(15); // how long the level is
+            timer.init(5); // how long the level is
             if (lvls[game.currentLvl].shouldLoadWave) {
                 crush.init();
             }
@@ -74,8 +74,9 @@ var game = {
                 this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
             }
             this.render.font = "30px Arial";
+            this.render.fillStyle = 'red';
             this.render.fillText(timer.format(),this.canvas.width-150,50);
-            this.render.fillText(scoring.score, this.canvas.width - 250,50);
+            this.render.fillText(scoring.score, this.canvas.width - 250,50);   
             
         }
     }
