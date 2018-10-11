@@ -65,7 +65,7 @@ var game = {
 
 
         if (this.gameOver) {
-            gameOver.display();
+            gameOver.display(); // a problem. this is redrawing it over and over again. need to make sure it doesn't happen
         }
         else {
             this.update();
