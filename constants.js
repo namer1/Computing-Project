@@ -26,7 +26,7 @@ var SHARK_FOLDER = 'sprites/Background/gameScreen/animals/Shark';
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;
 
-var START_POSITION = 1;
+var START_POSITION = 0;
 var PLAYER_MAX = 35;
 var PLAYER_MIN = 0;
 

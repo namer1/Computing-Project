@@ -1,5 +1,5 @@
 var server = {
-    getScore : function(){
+    getScores : function(){
         return fetch("http://localhost/php/").then((response) => response.json())
     },
     saveScore : function(name, score, level){
