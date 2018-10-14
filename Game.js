@@ -62,10 +62,10 @@ var game = {
             var img = a.images[a.imgNumber];
             this.render.drawImage(img, 0,0, img.width, img.height, a.x, 200, img.width, img.height);
         }.bind(this))
-
-
+        
         if (this.gameOver) {
             gameOver.display(); // a problem. this is redrawing it over and over again. need to make sure it doesn't happen
+            clearInterval(game.gameLoop);
         }
         else {
             this.update();
