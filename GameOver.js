@@ -28,19 +28,17 @@ var gameOver ={
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);
             render.font = "30px Arial";
-            render.fillText("restart", this.rect.x + this.rect.w/2, this.rect.y + this.rect.h/2);
+            render.fillText("Restart", this.rect.x + this.rect.w/2, 15 + this.rect.h/2);
             document.addEventListener('click', this.checkStart.bind(this));
-            render.fillText("Game over",50,50);
+            render.fillText("Game Over",50,15 + this.rect.h/2);
         }.bind(this)
     },
     drawTable : function(list){
         var render = this.canvas.getContext("2d");
-        render.fillStyle = 'white';
-        render.fillRect(200,200,600,600);
         render.fillStyle = 'black';
-        render.fillText("Player", 250, 250);
-        render.fillText("Points", 450, 250);
-        render.fillText("Level", 650, 250);
+        render.fillText("Player", this.canvas.width/2 - 400, 100);
+        render.fillText("Points", this.canvas.width/2 - 245, 100);
+        render.fillText("Level", this.canvas.width/2 - 100, 100);
         var find_user = document.cookie.split('user_id=')[1];
         var user_id = -1;
         if (find_user) {
@@ -54,9 +52,9 @@ var gameOver ={
             else{
                 render.fillStyle = 'black'
             }
-            render.fillText(element.username, 250, 300 + 50*index)
-            render.fillText(element.points, 450, 300 + 50*index)
-            render.fillText(element.level, 650, 300 + 50*index)
+            render.fillText(element.username, this.canvas.width/2 - 400, 150 + 55*index)
+            render.fillText(element.points, this.canvas.width/2 - 245, 150 + 55*index)
+            render.fillText(element.level, this.canvas.width/2 - 100, 150 + 55*index)
 
         }
     },
