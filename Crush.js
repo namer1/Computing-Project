@@ -1,6 +1,6 @@
 var crush = {
     init : function(){
-        this.x = -4000 - Math.random()*10000;
+        this.x = -4000 - Math.random()*lvls[game.currentLvl].waveRandom;
         this.crushing = new Image();
         this.crushing.src = lvls[game.currentLvl].wave;
     },

@@ -85,6 +85,9 @@ var player = {
             this.inWater = false;
         }
     },
+    inWaterSpeed : function(){
+        if(this.inWater && this.currentImg <= 7 && this.currentImg != 0){ }
+    },
     loop : function(){
         for (var i=0; i<LOOP_BREAKPOINTS.length; i++) {
             if(this.currentImg == LOOP_BREAKPOINTS[i] && !this.inWater){
