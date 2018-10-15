@@ -13,6 +13,12 @@ var startScreen = {
             render.font = "30px Arial";
             render.fillText("Start", this.rect.x + this.rect.w/2, this.rect.y + this.rect.h/2);
             document.addEventListener('click', this.checkStart.bind(this));
+            document.addEventListener('keydown', function(event){
+                if (event.keyCode == 13 || event.keyCode == 32){
+                    this.startGame();
+                }
+            }.bind(this));
+
         }.bind(this)
     },
     checkStart: function(event) {
