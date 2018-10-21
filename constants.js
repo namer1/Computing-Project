@@ -1,4 +1,4 @@
-var BACKGROUND_SCROLL_X = 5;
+var BACKGROUND_SCROLL_X = 3;
 var START_SCREEN_BG = 'sprites/Background/startScreen/startSreenBackground.png';
 var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';
 
