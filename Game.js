@@ -37,6 +37,7 @@ var game = {
         crush.move();
         player.loop();
         this.animals.forEach(function(a){ a.move(); })
+        player.recordChanges();
     },
     clear : function(){
         this.render.clearRect(0, 0, this.canvas.width, this.canvas.height);

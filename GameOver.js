@@ -48,6 +48,9 @@ var gameOver ={
             const element = list[index]; // element is each row we go through
             if(element.user_id == user_id){
                 render.fillStyle = 'red'
+                if(index == 0 && Math.round(scoring.score) == element.points){
+                    this.saveRecord();
+                }
             }
             else{
                 render.fillStyle = 'black'
@@ -77,4 +80,7 @@ var gameOver ={
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     },
+    saveRecord : function(){
+        server.saveRecord(JSON.stringify(player.record))
+    }
 }
