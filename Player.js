@@ -17,6 +17,7 @@ var player = {
             }.bind(this, i);
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
+        this.record = [];
     },
     changeImage : function(newImage){
         this.currentImg = newImage; 
@@ -33,16 +34,19 @@ var player = {
             if (event.keyCode == LEFT_ARROW){ 
                 this.previousImage();
                 if (this.inWater){
-                    this.speedY = ARROW_SPEED[this.currentImg];
+                    this.speedY = (ARROW_SPEED[this.currentImg]  + this.speedY)/2;
                 }
             }
             if (event.keyCode == RIGHT_ARROW){ 
                 this.nextImage();
                 if (this.inWater){
-                    this.speedY = ARROW_SPEED[this.currentImg];
+                    this.speedY = (ARROW_SPEED[this.currentImg]  + this.speedY)/2;
                 }
             }
         }.bind(this));
+
+        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
+        //let width = window.innerWidth;
     },
     nextImage : function () {
         if(this.currentImg < PLAYER_MAX){
@@ -85,9 +89,6 @@ var player = {
             this.inWater = false;
         }
     },
-    inWaterSpeed : function(){
-        if(this.inWater && this.currentImg <= 7 && this.currentImg != 0){ }
-    },
     loop : function(){
         for (var i=0; i<LOOP_BREAKPOINTS.length; i++) {
             if(this.currentImg == LOOP_BREAKPOINTS[i] && !this.inWater){
@@ -99,5 +100,8 @@ var player = {
             scoring.overallNumberOfLoops++;
             scoring.resetLoopPositions();
         }
+    },
+    recordChanges : function(){
+        this.record.push({x:this.x, y:this.y})
     }
 }
