@@ -3,6 +3,7 @@ var player = {
         this.inWater = false;
         this.speedY = 0;
         this.speedX = 0.2;
+        //this.maxSpeedX = innerWidth/lvls[game.currentLvl].time;
         this.x = PLAYER_POS_X_INITIAL;
         this.y = PLAYER_POS_Y_INITIAL;
         this.images = [];
