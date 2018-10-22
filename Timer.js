@@ -11,8 +11,14 @@ var timer = {
     tick : function(){
         if (this.currentTime == 0){
             this.stop();
-            alert("Go to next level");
-            game.startLevel();
+            if (game.currentLvl < lvls.length-1){
+                alert("Go to next level");
+                game.startLevel();
+            }
+            else{
+                alert("Finished the game. Well Done!")
+                gameOver.over();
+            }
         }
         else{
             this.currentTime -= 1;
