@@ -20,6 +20,8 @@ var game = {
             }
             this.animals = [];
             this.animals.push(new Animal());
+            player.x = PLAYER_POS_X_INITIAL; player.y = PLAYER_POS_Y_INITIAL; player.currentImg = START_POSITION;
+            player.speedY = 0; player.speedX = 0.2;
         }
         else{
             gameOver.over();
@@ -65,7 +67,7 @@ var game = {
         }.bind(this))
         
         if (this.gameOver) {
-            gameOver.display(); // a problem. this is redrawing it over and over again. need to make sure it doesn't happen
+            gameOver.display();
             clearInterval(game.gameLoop);
         }
         else {
