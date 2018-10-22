@@ -5,7 +5,7 @@ var lvls = [{
     day: MORN_OBJECTS,
     wave: WAVE_CRUSH_MORN,
     shouldLoadWave: false,
-    time: 5,
+    time: 30,
     waveRandom : 0,
 }, {
     sea: SEA_NOON,

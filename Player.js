@@ -18,6 +18,7 @@ var player = {
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
         this.record = [];
+        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
     },
     changeImage : function(newImage){
         this.currentImg = newImage; 
@@ -45,8 +46,6 @@ var player = {
             }
         }.bind(this));
 
-        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
-        //let width = window.innerWidth;
     },
     nextImage : function () {
         if(this.currentImg < PLAYER_MAX){
