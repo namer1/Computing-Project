@@ -9,13 +9,11 @@ $all_scores = $database->query(
     JOIN `games` ON max_scores.user_id = games.user_id AND max_scores.points = games.points
     JOIN `users` ON games.user_id = users.user_id
     ORDER BY points DESC LIMIT 10)
-UNION
-(SELECT users.username, games.user_id, games.points, games.level FROM
-users JOIN games ON users.user_id = games.user_id
-WHERE users.user_id = ".$_GET['user_id'].".
-ORDER BY points DESC LIMIT 1)"); //DESC means in biggest to smallest (descending)
-
-
+    UNION
+    (SELECT users.username, games.user_id, games.points, games.level FROM
+    users JOIN games ON users.user_id = games.user_id
+    WHERE users.user_id = ".$_GET['user_id'].".
+    ORDER BY points DESC LIMIT 1)"); //DESC means in biggest to smallest (descending)
 
 $to_print = [];
 while ($row = $all_scores->fetch_assoc()) {

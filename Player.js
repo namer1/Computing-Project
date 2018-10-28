@@ -67,7 +67,7 @@ var player = {
         else {
             this.currentImg = PLAYER_MAX;
         }
-    },
+    }, 
     enterWater : function(){
         if(this.y >= WAVE_POSITION - 20 && !this.inWater){
             scoring.outAir();
