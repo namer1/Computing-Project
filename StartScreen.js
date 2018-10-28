@@ -1,5 +1,6 @@
 var startScreen = {
     display : function(){
+        this.started = false;
         this.canvas = document.getElementById("Game");
         this.calculateCanvas();
         var render = this.canvas.getContext("2d");
@@ -8,6 +9,9 @@ var startScreen = {
         this.rect = {
             x : 100, y : 100, w: 100, h: 100
         };
+        server.getRecord().then(function(coordinates){
+            player.ghostplayer = coordinates
+        });
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);
             render.font = "30px Arial";
@@ -15,7 +19,10 @@ var startScreen = {
             document.addEventListener('click', this.checkStart.bind(this));
             document.addEventListener('keydown', function(event){
                 if (event.keyCode == 13 || event.keyCode == 32){
-                    this.startGame();
+                    if (!this.started){
+                        this.started = true;
+                        this.startGame();
+                    }
                 }
             }.bind(this));
 

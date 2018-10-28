@@ -34,6 +34,9 @@ var server = {
             method: 'post',
             body: data
         })  
+    },
+    getRecord : function(){
+        return fetch("http://localhost/php/getrecord.php").then((response) => response.json())
     }
 }
 

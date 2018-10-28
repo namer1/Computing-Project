@@ -1,9 +1,12 @@
 var player = {
+    ghostplayer : [],
+    ghostplayerCount : 0,
     init : function(number){
         this.inWater = false;
         this.speedY = 0;
         this.speedX = 0.2;
         //this.maxSpeedX = innerWidth/lvls[game.currentLvl].time;
+        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
         this.x = PLAYER_POS_X_INITIAL;
         this.y = PLAYER_POS_Y_INITIAL;
         this.images = [];
@@ -19,7 +22,6 @@ var player = {
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
         this.record = [];
-        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
     },
     changeImage : function(newImage){
         this.currentImg = newImage; 
@@ -101,6 +103,6 @@ var player = {
         }
     },
     recordChanges : function(){
-        this.record.push({x:this.x, y:this.y})
+        this.record.push({x:this.x, y:this.y, imgNum: this.currentImg})
     }
 }

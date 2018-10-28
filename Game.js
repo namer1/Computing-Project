@@ -40,6 +40,7 @@ var game = {
         player.loop();
         this.animals.forEach(function(a){ a.move(); })
         player.recordChanges();
+        player.ghostplayerCount++;
     },
     clear : function(){
         this.render.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -73,6 +74,13 @@ var game = {
         else {
             this.update();
             this.render.drawImage(player.images[player.currentImg], player.x, player.y);
+            var coordinate = player.ghostplayer[player.ghostplayerCount]
+            var ghostY = WAVE_POSITION*2 - player.y; // CAN'T HAVE A PLAYER FACTOR IN HERE
+            if (coordinate && coordinate.x && coordinate.y && coordinate.imgNum != undefined){ // only if they exist
+                this.render.globalAlpha = 0.5; // transparancy
+                this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, coordinate.y);
+                this.render.globalAlpha = 1;
+            }
             if (crush.crushing) {
                 this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
             }
