@@ -75,10 +75,10 @@ var game = {
             this.update();
             this.render.drawImage(player.images[player.currentImg], player.x, player.y);
             var coordinate = player.ghostplayer[player.ghostplayerCount]
-            var ghostY = WAVE_POSITION*2 - player.y; // CAN'T HAVE A PLAYER FACTOR IN HERE
+            var ghostY = WAVE_POSITION*2 - coordinate.y; // CAN'T HAVE A PLAYER FACTOR IN HERE
             if (coordinate && coordinate.x && coordinate.y && coordinate.imgNum != undefined){ // only if they exist
                 this.render.globalAlpha = 0.5; // transparancy
-                this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, coordinate.y);
+                this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, ghostY - player.y);
                 this.render.globalAlpha = 1;
             }
             if (crush.crushing) {
