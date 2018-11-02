@@ -7,6 +7,7 @@ var lvls = [{
     shouldLoadWave: false,
     time: 30,
     waveRandom : 0,
+    loadShadow : false,
 }, {
     sea: SEA_NOON,
     background1: BACKGROUND_NOON,
@@ -16,6 +17,7 @@ var lvls = [{
     shouldLoadWave: true,
     time: 60,
     waveRandom : 10000,
+    loadShadow : false,
 }, {
     sea: SEA_NIGHT,
     background1: BACKGROUND_NIGHT,
@@ -25,4 +27,5 @@ var lvls = [{
     shouldLoadWave: true,
     time: 90,
     waveRandom : 7500,
+    loadShadow : true,
 }]
