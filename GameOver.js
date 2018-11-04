@@ -2,15 +2,7 @@ var gameOver ={
     over : function(){
         timer.stop();
         game.gameOver = true;
-        var find_user = document.cookie.split('user_id=')[1];
-        var name = null;
-        if (!find_user) { // asks for the name only if there is no user_id
-            name = prompt("What is your name? ");
-            if (name == null || name == ""){
-                name = 'Anonymous'
-            }
-        }
-        server.saveScore(name, scoring.score, game.currentLvl+1).then(function(){
+        server.saveScore(scoring.score, game.currentLvl+1).then(function(){
             server.getScores().then(function(list){
                 this.drawTable(list);
             }.bind(this))
@@ -39,14 +31,9 @@ var gameOver ={
         render.fillText("Player", this.canvas.width/2 - 400, 100);
         render.fillText("Points", this.canvas.width/2 - 245, 100);
         render.fillText("Level", this.canvas.width/2 - 100, 100);
-        var find_user = document.cookie.split('user_id=')[1];
-        var user_id = -1;
-        if (find_user) {
-            user_id = find_user.split(';')[0]; // splits the cookie into a list twice and then takes the value of user_id
-        }
         for (let index = 0; index < list.length; index++) {
             const element = list[index]; // element is each row we go through
-            if(element.user_id == user_id){
+            if(element.selected){
                 render.fillStyle = 'red'
                 if(index == 0 && Math.round(scoring.score) == element.points){
                     this.saveRecord();

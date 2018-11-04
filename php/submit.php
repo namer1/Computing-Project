@@ -1,7 +1,8 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 $database = new mysqli("localhost", "root", "123567", "surfing");
-$user_id = $_POST["user_id"];
+$user_id = $_SESSION["user_id"];
 $username = $_POST["username"]; //find me the information that is in the ""
 $level = $_POST["level"];
 $points = $_POST["points"];

@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 $database = new mysqli("localhost", "root", "123567", "surfing");
 
@@ -12,11 +13,12 @@ $all_scores = $database->query(
     UNION
     (SELECT users.username, games.user_id, games.points, games.level FROM
     users JOIN games ON users.user_id = games.user_id
-    WHERE users.user_id = ".$_GET['user_id'].".
+    WHERE users.user_id = ".$_SESSION['user_id'].".
     ORDER BY points DESC LIMIT 1)"); //DESC means in biggest to smallest (descending)
 
 $to_print = [];
 while ($row = $all_scores->fetch_assoc()) {
+    $row["selected"] = ($row["user_id"] == $_SESSION['user_id']);
     $to_print[] = $row; // adding to list
 }
 
