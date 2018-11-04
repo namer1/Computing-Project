@@ -32,7 +32,4 @@ var background = {
     switch : function(){
         this.backgroundSwitch = !this.backgroundSwitch
     },
-    shadow : function(){
-        
-    }
 }
