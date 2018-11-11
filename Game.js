@@ -38,9 +38,13 @@ var game = {
         background.scrollY();
         crush.move();
         player.loop();
-        this.animals.forEach(function(a){ a.move(); })
+        this.animals.forEach(function(a){
+            a.move();
+            a.collisionTest()
+        })
         player.recordChanges();
         player.ghostplayerCount++;
+
     },
     clear : function(){
         this.render.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -64,7 +68,7 @@ var game = {
         }
         this.animals.forEach(function(a){
             var img = a.images[a.imgNumber];
-            this.render.drawImage(img, 0,0, img.width, img.height, a.x, 200, img.width, img.height);
+            this.render.drawImage(img, 0,0, img.width, img.height, a.x, a.y, img.width, img.height);
         }.bind(this))
         
         if (this.gameOver) {
@@ -87,7 +91,7 @@ var game = {
             this.render.fillStyle = 'red';
             this.render.fillText(timer.format(),this.canvas.width-150,50);
             this.render.fillText(scoring.score, this.canvas.width - 250,50);   
-            
+             
         }
     },
 }
