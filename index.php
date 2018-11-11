@@ -5,6 +5,15 @@ session_start();
 <html>
     <head>
         <title>My Game</title>
+        <style>
+        body {background-color: powderblue;}
+        /* #password {position: relative;
+                left: 100px;
+                top: 150px;}       
+        #username{position: relative;
+                left: 200px;
+                top: 150px;} */
+        </style>
     </head>
     <body style="margin: 0%">
         <canvas id="Game"></canvas>
@@ -22,6 +31,7 @@ session_start();
         <script src="StartScreen.js"></script>
         <script src="Server.js"></script>
         <script src="GameOver.js"></script>
+        <script src="paths/DolphinPath.js"></script>
 
         <?php
         if($_SESSION["user_id"]){
@@ -29,11 +39,14 @@ session_start();
         }
         else{
             echo "<form method=\"POST\" action=\"php/login.php\">
-            <input type=\"text\" name=\"username\">
-            <input type=\"password\" name=\"password\"> <!-- shows circles instead of text-->
-            <input type=\"submit\" value=\"login\">
-            </form>";
+            <input type=\"text\" name=\"username\" id=\"username\">
+            <input type=\"password\" name=\"password\" id=\"password\">
+            <input type=\"submit\" value=\"login\" id=\"button\">
+            </form>
+            <a href=\"register.html\">click here to regitser</a>";
+
         }
         ?>
+        
     </body>
 </html>

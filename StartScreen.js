@@ -6,8 +6,11 @@ var startScreen = {
         var render = this.canvas.getContext("2d");
         var bg = new Image();
         bg.src = START_SCREEN_BG;
-        this.rect = {
+        this.rectStart = {
             x : 100, y : 100, w: 100, h: 100
+        };
+        this.rectLogOut = {
+            x : 500, y : 100, w: 100, h: 100
         };
         server.getRecord().then(function(coordinates){
             player.ghostplayer = coordinates
@@ -15,7 +18,8 @@ var startScreen = {
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);
             render.font = "30px Arial";
-            render.fillText("Start", this.rect.x + this.rect.w/2, this.rect.y + this.rect.h/2);
+            render.fillText("Start", this.rectStart.x + this.rectStart.w/2, this.rectStart.y + this.rectStart.h/2);
+            render.fillText("log out", this.rectLogOut.x + this.rectLogOut.w/2, this.rectLogOut.y + this.rectLogOut.h/2);
             document.addEventListener('click', this.checkStart.bind(this));
             document.addEventListener('keydown', function(event){
                 if (event.keyCode == 13 || event.keyCode == 32){
@@ -31,9 +35,14 @@ var startScreen = {
     checkStart: function(event) {
         var p = this.getMousePos(event);
     
-        if (p.x >= this.rect.x && p.x <= this.rect.x + this.rect.w &&
-            p.y >= this.rect.y && p.y <= this.rect.y + this.rect.h) {
+        if (p.x >= this.rectStart.x && p.x <= this.rectStart.x + this.rectStart.w &&
+            p.y >= this.rectStart.y && p.y <= this.rectStart.y + this.rectStart.h) {
             this.startGame();
+        }
+
+        if (p.x >= this.rectLogOut.x && p.x <= this.rectLogOut.x + this.rectLogOut.w &&
+            p.y >= this.rectLogOut.y && p.y <= this.rectLogOut.y + this.rectLogOut.h) {
+            location.href = "php/logout.php";
         }
     },
     getMousePos : function(e) {
