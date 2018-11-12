@@ -32,6 +32,7 @@ session_start();
         <script src="Server.js"></script>
         <script src="GameOver.js"></script>
         <script src="paths/DolphinPath.js"></script>
+        <script src="paths/SharkPath.js"></script>
 
         <?php
         if($_SESSION["user_id"]){

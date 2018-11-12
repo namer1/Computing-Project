@@ -21,6 +21,7 @@ class Animal { // everything will be run each time for every animal
             case 1:
             this.images[0] = new Image();
             this.images[0].src = `${SHARK_FOLDER}/shark1.png`;
+            this.path = sharkPath;
             break;
         }
     }
