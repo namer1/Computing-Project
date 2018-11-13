@@ -9,6 +9,7 @@ class Animal { // everything will be run each time for every animal
         this.pathCounter = 0;
         this.playerWidth = player.currentImg.width / 2
         this.playerHeight = player.currentImg.height / 2
+
         this.rect ={
             x: 0, y: 0, w: 0, h: 0 
         }
@@ -19,13 +20,18 @@ class Animal { // everything will be run each time for every animal
                 this.images[i].src = `${DOLPHIN_FOLDER}/dolphin${i+1}.png`;
             }
             this.path = dolphinPath;
+            this.imageWidth = images[i].width / 2
+            this.imageHeight = images[i].height / 2
             break;
             case 1:
             this.images[0] = new Image();
             this.images[0].src = `${SHARK_FOLDER}/shark1.png`;
             this.path = sharkPath;
+            this.imageWidth = images[0].width / 2
+            this.imageHeight = images[0].height / 2
             break;
         }
+        
     }
     move(){
         this.x = this.path[this.pathCounter].x;
@@ -39,10 +45,12 @@ class Animal { // everything will be run each time for every animal
         }
     }
     collisionTest(){
-        if (player.x + this.playerWidth>= this.rect.x && player.x + this.playerWidth <= this.rect.x + this.rect.w &&
-            player.y + this.playerHeight>= this.rect.y && player.y + this.playerHeight <= this.rect.y + this.rect.h) {
+        if (player.x + this.playerWidth>= this.x + this.imageWidth && player.x + this.playerWidth <= this.x - this.imageWidth &&
+            player.y + this.playerHeight>= this.y + this.imageHeight && player.y + this.playerHeight <= this.y + this.imageHeight) {
             gameOver.over();
-            ///////// WILL ONLY HAPPEN WHEN ALL OF IT IS TRUE
         }
     }
 }
+
+
+//////////IMAGES IS NOT DEFINED
