@@ -7,6 +7,8 @@ class Animal { // everything will be run each time for every animal
         this.images = [];
         this.path = [];
         this.pathCounter = 0;
+        this.playerWidth = player.currentImg.width / 2
+        this.playerHeight = player.currentImg.height / 2
         this.rect ={
             x: 0, y: 0, w: 0, h: 0 
         }
@@ -37,8 +39,8 @@ class Animal { // everything will be run each time for every animal
         }
     }
     collisionTest(){
-        if (player.x >= this.rect.x && player.x <= this.rect.x + this.rect.w &&
-            player.y >= this.rect.y && player.y <= this.rect.y + this.rect.h) {
+        if (player.x + this.playerWidth>= this.rect.x && player.x + this.playerWidth <= this.rect.x + this.rect.w &&
+            player.y + this.playerHeight>= this.rect.y && player.y + this.playerHeight <= this.rect.y + this.rect.h) {
             gameOver.over();
             ///////// WILL ONLY HAPPEN WHEN ALL OF IT IS TRUE
         }
