@@ -37,10 +37,10 @@ class Animal { // everything will be run each time for every animal
         }
     }
     collisionTest(){
-        console.log(player.x, player.y, this.rect)
         if (player.x >= this.rect.x && player.x <= this.rect.x + this.rect.w &&
             player.y >= this.rect.y && player.y <= this.rect.y + this.rect.h) {
             gameOver.over();
+            ///////// WILL ONLY HAPPEN WHEN ALL OF IT IS TRUE
         }
     }
 }
