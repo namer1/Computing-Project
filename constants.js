@@ -1,5 +1,5 @@
 var BACKGROUND_SCROLL_X = 3;
-var START_SCREEN_BG = 'sprites/Background/startScreen/startSreenBackground.png';
+var START_SCREEN_BG = 'sprites/Background/startScreen/startScreenBackground.png';
 var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';
 
 var BACKGROUND_MORN = 'sprites/Background/gameScreen/morning/BackgroundMorning(1).png';
@@ -20,8 +20,7 @@ var BACKGROUND_NIGHT2 = 'sprites/Background/gameScreen/night/Background(2).png';
 var WAVE_CRUSH_NIGHT =  'sprites/Background/gameScreen/night/crushingWave.png';
 var NIGHT_OBJECTS ='sprites/Background/gameScreen/night/nightObjects.png';
 
-var DOLPHIN_FOLDER = 'sprites/Background/gameScreen/animals/Dolphin';
-var SHARK_FOLDER = 'sprites/Background/gameScreen/animals/Shark';
+var OBSTACLES = 'sprites\Background\gameScreen\obstacles';
 
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;
@@ -32,8 +31,9 @@ var PLAYER_MIN = 0;
 
 var PLAYER_POS_X_INITIAL = 45;
 var PLAYER_POS_Y_INITIAL = 150;
-var GRAVITY_AIR = 0.08;
-var GRAVITY_WATER = 0.01;
+var GRAVITY_Y_AIR = 0.08;
+var GRAVITY_Y_WATER = 0.01;
+var GRAVITY_X_WATER = 0.1;
 var WAVE_POSITION = 225;
 var PAUSED = 80;
 

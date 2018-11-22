@@ -66,10 +66,10 @@ var game = {
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x + background.wave2.width,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
         }
-        this.animals.forEach(function(a){
-            var img = a.images[a.imgNumber];
-            this.render.drawImage(img, 0,0, img.width, img.height, a.x, a.y, img.width, img.height);
-        }.bind(this))
+        // this.animals.forEach(function(a){
+        //     var img = a.images[a.imgNumber];
+        //     this.render.drawImage(img, 0,0, img.width, img.height, a.x, a.y, img.width, img.height);
+        // }.bind(this))
         
         if (this.gameOver) {
             gameOver.display();

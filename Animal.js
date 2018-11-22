@@ -15,32 +15,37 @@ class Animal { // everything will be run each time for every animal
         }
         switch (this.type) {
             case 0:
-            for (var i = 0; i < 5; i++){
-                this.images[i] = new Image();
-                this.images[i].src = `${DOLPHIN_FOLDER}/dolphin${i+1}.png`;
-            }
-            this.path = dolphinPath;
-
-            break;
-            case 1:
             this.images[0] = new Image();
-            this.images[0].src = `${SHARK_FOLDER}/shark1.png`;
-            this.path = sharkPath;
+            this.images[0].src = `${OBSTACLES}/0.png`;
+            break;
 
+            case 1:
+            this.images[1] = new Image();
+            this.images[1].src = `${OBSTACLES}/1.png`;
+            break;
+
+            case 2:
+            this.images[2] = new Image();
+            this.images[2].src = `${OBSTACLES}/2.png`;
+            break;
+
+            case 3:
+            this.images[3] = new Image();
+            this.images[3].src = `${OBSTACLES}/3.png`;
             break;
         }
         
     }
     move(){
-        this.x = this.path[this.pathCounter].x;
-        this.y = this.path[this.pathCounter].y;
-        this.rect ={
-            x: this.x-60, y: this.y-60, w:this.images[this.imgNumber].width+120, h: this.images[this.imgNumber].height+120
-        } 
-        this.pathCounter++;
-        if(this.pathCounter == this.path.length){
-            this.pathCounter--;
-        }
+        // this.x = this.path[this.pathCounter].x;
+        // this.y = this.path[this.pathCounter].y;
+        // this.rect ={
+        //     x: this.x-60, y: this.y-60, w:this.images[this.imgNumber].width+120, h: this.images[this.imgNumber].height+120
+        // } 
+        // this.pathCounter++;
+        // if(this.pathCounter == this.path.length){
+        //     this.pathCounter--;
+        // }
     }
     collisionTest(){
         if (player.x >= this.rect.x && player.x <= this.rect.x + this.rect.w &&
