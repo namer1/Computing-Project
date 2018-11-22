@@ -8,7 +8,7 @@ var gravity = {
         }
         player.y += player.speedY;
         player.x += player.speedX;
-        if(player.x >= player.maxSpeedX){
+        if(player.x >= window.innerWidth/lvls[game.currentLvl].time){
             player.speedX = 0;
         }
     }
