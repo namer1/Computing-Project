@@ -1,56 +1,55 @@
 class Animal { // everything will be run each time for every animal
     constructor(){
-        this.x = 0;
-        this.y = 0;
-        this.type = Math.round(Math.random()); // 0 = dolphin, 1 = shark
-        this.imgNumber = 0;
-        this.images = [];
-        this.path = [];
-        this.pathCounter = 0;
-        this.playerWidth = player.currentImg.width / 2
-        this.playerHeight = player.currentImg.height / 2
-
+        this.x = game.canvas.width;
+        this.type = Math.floor(Math.random() * 4); // 0 = barrel, 1 = ship mast, 2 = rock, 3 = seaweed
         this.rect ={
             x: 0, y: 0, w: 0, h: 0 
         }
         switch (this.type) {
             case 0:
-            this.images[0] = new Image();
-            this.images[0].src = `${OBSTACLES}/0.png`;
+            this.image = new Image();
+            this.image.src = `${OBSTACLES}/0.png`;
+            this.y = 355;
             break;
 
             case 1:
-            this.images[1] = new Image();
-            this.images[1].src = `${OBSTACLES}/1.png`;
+            this.image = new Image();
+            this.image.src = `${OBSTACLES}/1.png`;
+            this.y = game.canvas.height-150;
             break;
 
             case 2:
-            this.images[2] = new Image();
-            this.images[2].src = `${OBSTACLES}/2.png`;
+            this.image = new Image();
+            this.image.src = `${OBSTACLES}/2.png`;
+            this.y = 290;
             break;
 
             case 3:
-            this.images[3] = new Image();
-            this.images[3].src = `${OBSTACLES}/3.png`;
+            this.image = new Image();
+            this.image.src = `${OBSTACLES}/3.png`;
+            this.y = game.canvas.height-100;
             break;
         }
         
     }
     move(){
-        // this.x = this.path[this.pathCounter].x;
-        // this.y = this.path[this.pathCounter].y;
-        // this.rect ={
-        //     x: this.x-60, y: this.y-60, w:this.images[this.imgNumber].width+120, h: this.images[this.imgNumber].height+120
-        // } 
-        // this.pathCounter++;
-        // if(this.pathCounter == this.path.length){
-        //     this.pathCounter--;
-        // }
+        this.x -= 5;
+        this.rect ={
+            x: this.x, y: this.y, w:this.image.width, h: this.image.height
+        } 
     }
     collisionTest(){
-        if (player.x >= this.rect.x && player.x <= this.rect.x + this.rect.w &&
-            player.y >= this.rect.y && player.y <= this.rect.y + this.rect.h) {
+        if (this.hasCollidedX() && this.hasCollidedY()) {
                 gameOver.over();
         }
     }
+    hasCollidedX() {
+        return (player.x >= this.rect.x && player.x <= this.rect.x + this.rect.w) ||
+               (player.x + player.width >= this.rect.x && player.x + player.width <= this.rect.x + this.rect.w)
+    }
+    hasCollidedY() {
+        return (player.y >= this.rect.y && player.y <= this.rect.y + this.rect.h) ||
+               (player.y + player.height >= this.rect.y && player.y + player.height <= this.rect.y + this.rect.h)
+    }
+    // CAN BE IMPROVED BY MAKING IT NOT A RECTANGULAR BOUNDRY BOX
 }
