@@ -10,7 +10,7 @@ var server = {
         return fetch("http://localhost/php/submit.php", {
             method: 'post',
             body: data
-        }).then((response) => response.json())
+        }).then((response) => response.json());
     },
     saveRecord : function(file){
         var data = new FormData();
@@ -18,11 +18,9 @@ var server = {
         return fetch("http://localhost/php/record.php", {
             method: 'post',
             body: data
-        })  
+        }).then((res) => console.log(res));
     },
     getRecord : function(){
-        return fetch("http://localhost/php/getrecord.php").then((response) => response.json())
+        return fetch("http://localhost/php/getrecord.php").then((response) => JSON.stringify(response));
     }
 }
-
-//TRY AND MAKE THE USERS WITH PASSWORDS. NEED MORE COMPLEXITY

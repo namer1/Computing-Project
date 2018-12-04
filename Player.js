@@ -3,9 +3,11 @@ var player = {
     ghostplayerCount : 0,
     init : function(number){
         this.inWater = false;
+        this.width = 80;
+        this.height = 80;
         this.speedY = 0;
         this.speedX = 0.2;
-        this.maxSpeedX = window.innerWidth/lvls[game.currentLvl].time;
+        //this.maxSpeedX = window.innerWidth/lvls[game.currentLvl].time;
         //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
         this.x = PLAYER_POS_X_INITIAL;
         this.y = PLAYER_POS_Y_INITIAL;
@@ -17,11 +19,18 @@ var player = {
                 if (i == number - 1){
                     game.init();
                     game.startLevel();
+                    if(lvls[game.currentLvl].loadShadow){
+                        this.shadow = new Image();
+                        this.shadow.src = SHADOW;
+                        this.moon = new Image();
+                        this.moon.src = MOON;
+                    }
                 }
             }.bind(this, i);
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
         this.record = [];
+        
     },
     changeImage : function(newImage){
         this.currentImg = newImage; 
@@ -90,6 +99,9 @@ var player = {
             scoring.inAir();
             this.inWater = false;
         }
+		//if (crush.isUnderWave == true && this.y == WAVE_POSITION){
+			//gameOver.over()
+		//}
     },
     loop : function(){
         for (var i=0; i<LOOP_BREAKPOINTS.length; i++) {
@@ -103,6 +115,8 @@ var player = {
         }
     },
     recordChanges : function(){
-        this.record.push({x:this.x, y:this.y, imgNum: this.currentImg})
+        this.record.push({x:this.x, y:this.y, imgNum: this.currentImg});
+        console.log({x:this.x, y:this.y, imgNum: this.currentImg});
+        // DOES WORK
     }
 }

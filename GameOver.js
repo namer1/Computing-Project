@@ -35,7 +35,8 @@ var gameOver ={
             const element = list[index]; // element is each row we go through
             if(element.selected){
                 render.fillStyle = 'red'
-                if(index == 0 && Math.round(scoring.score) == element.points){
+                console.log(index == 0 && Math.round(scoring.score) >= element.points);
+                if(index == 0 && Math.round(scoring.score) >= element.points){
                     this.saveRecord();
                 }
             }
@@ -45,7 +46,6 @@ var gameOver ={
             render.fillText(element.username, this.canvas.width/2 - 400, 150 + 55*index)
             render.fillText(element.points, this.canvas.width/2 - 245, 150 + 55*index)
             render.fillText(element.level, this.canvas.width/2 - 100, 150 + 55*index)
-
         }
     },
     checkStart: function(event) {
@@ -68,6 +68,8 @@ var gameOver ={
         this.canvas.height = window.innerHeight;
     },
     saveRecord : function(){
-        server.saveRecord(JSON.stringify(player.record))
+        server.saveRecord(JSON.stringify(player.record));
+        console.log(JSON.stringify(player.record));
+        // DOES HAPPEN
     }
 }
