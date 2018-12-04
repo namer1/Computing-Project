@@ -8,7 +8,8 @@ $password = $_POST["password"];
 
 $find_user = $database->query("SELECT user_id, password FROM users WHERE username='$username'"); // checks if username matches
 if ($find_user->num_rows == 0){ // iser doesn't exist
-    echo "unser incorrect";
+    echo "unser incorrect"
+    header("Location: /");
 }
 else{ // user exists
     $user_details = $find_user->fetch_assoc(); //password
@@ -18,5 +19,6 @@ else{ // user exists
     }
     else{
         echo "incorrect password";
+        header("Location: /");
     }
 }
