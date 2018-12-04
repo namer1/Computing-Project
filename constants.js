@@ -19,8 +19,10 @@ var BACKGROUND_NIGHT = 'sprites/Background/gameScreen/night/Background(1).png';
 var BACKGROUND_NIGHT2 = 'sprites/Background/gameScreen/night/Background(2).png';
 var WAVE_CRUSH_NIGHT =  'sprites/Background/gameScreen/night/crushingWave.png';
 var NIGHT_OBJECTS ='sprites/Background/gameScreen/night/nightObjects.png';
+var MOON ='sprites/Background/gameScreen/night/moon.png';
+var SHADOW = 'sprites/Surfer/darkess.png';
 
-var OBSTACLES = 'sprites\Background\gameScreen\obstacles';
+var OBSTACLES = 'sprites/Background/gameScreen/obstacles';
 
 var LEFT_ARROW = 37;
 var RIGHT_ARROW = 39;
