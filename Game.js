@@ -66,10 +66,10 @@ var game = {
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
             this.render.drawImage(background.wave2,0,0,background.wave2.width,background.wave2.height,background.x + background.wave2.width,background.waveLvl,background.wave2.width,this.canvas.height - WAVE_POSITION);
         }
-        // this.animals.forEach(function(a){
-        //     var img = a.images[a.imgNumber];
-        //     this.render.drawImage(img, 0,0, img.width, img.height, a.x, a.y, img.width, img.height);
-        // }.bind(this))
+        this.animals.forEach(function(a){
+            this.render.drawImage(a.image, 0,0, a.image.width, a.image.height, a.x, a.y, a.image.width, a.image.height);
+        }.bind(this))
+
         
         if (this.gameOver) {
             gameOver.display();
@@ -83,6 +83,10 @@ var game = {
                 this.render.globalAlpha = 0.5; // transparancy
                 this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, coordinate.y);
                 this.render.globalAlpha = 1;
+            }
+            if(lvls[game.currentLvl].loadShadow){
+                this.render.drawImage(player.shadow, 0, 0, player.shadow.width, player.shadow.height, -1350 + player.x - PLAYER_POS_X_INITIAL, -1300 + player.y - PLAYER_POS_Y_INITIAL, player.shadow.width, player.shadow.height)
+                this.render.drawImage(player.moon, game.canvas.width - 300, 20)
             }
             if (crush.crushing) {
                 this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
