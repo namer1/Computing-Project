@@ -35,7 +35,7 @@ var gameOver ={
             const element = list[index]; // element is each row we go through
             if(element.selected){
                 render.fillStyle = 'red'
-                console.log(index == 0 && Math.round(scoring.score) >= element.points);
+                //console.log(index == 0 && Math.round(scoring.score) >= element.points);
                 if(index == 0 && Math.round(scoring.score) >= element.points){
                     this.saveRecord();
                 }
@@ -69,7 +69,7 @@ var gameOver ={
     },
     saveRecord : function(){
         server.saveRecord(JSON.stringify(player.record));
-        console.log(JSON.stringify(player.record));
+        //console.log(JSON.stringify(player.record));
         // DOES HAPPEN
     }
 }

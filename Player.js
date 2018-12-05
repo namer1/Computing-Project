@@ -116,7 +116,7 @@ var player = {
     },
     recordChanges : function(){
         this.record.push({x:this.x, y:this.y, imgNum: this.currentImg});
-        console.log({x:this.x, y:this.y, imgNum: this.currentImg});
+        //console.log({x:this.x, y:this.y, imgNum: this.currentImg});
         // DOES WORK
     }
 }

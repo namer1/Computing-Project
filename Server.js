@@ -10,7 +10,7 @@ var server = {
         return fetch("http://localhost/php/submit.php", {
             method: 'post',
             body: data
-        }).then((response) => response.json());
+        })//.then((response) => response.json());
     },
     saveRecord : function(file){
         var data = new FormData();
@@ -24,3 +24,4 @@ var server = {
         return fetch("http://localhost/php/getrecord.php").then((response) => JSON.stringify(response));
     }
 }
+//RESPONSE IS NOT DEFINED --> NOT SURE WHY
