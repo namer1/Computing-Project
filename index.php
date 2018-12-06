@@ -19,7 +19,7 @@ session_start();
         <canvas id="Game"></canvas>
         <script src="constants.js"></script>
         <script src="Levels.js"></script>
-        <script src="Animal.js"></script>
+        <script src="Obstacles.js"></script>
         <script src="Player.js"></script>
         <script src="PlayerSpeed.js"></script>  
         <script src="Game.js"></script>
