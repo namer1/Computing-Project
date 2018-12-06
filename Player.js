@@ -6,9 +6,7 @@ var player = {
         this.width = 80;
         this.height = 80;
         this.speedY = 0;
-        this.speedX = 0.2;
-        //this.maxSpeedX = window.innerWidth/lvls[game.currentLvl].time;
-        //MAX speed of player should be canvas width divided by time of level TO ALLOW PLAYER TO OUTRUN THE CRUSHING WAVE
+        this.speedX = 1;
         this.x = PLAYER_POS_X_INITIAL;
         this.y = PLAYER_POS_Y_INITIAL;
         this.images = [];

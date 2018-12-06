@@ -1,4 +1,4 @@
-var BACKGROUND_SCROLL_X = 3;
+var BACKGROUND_SCROLL_X = 5;
 var START_SCREEN_BG = 'sprites/Background/startScreen/startScreenBackground.png';
 var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';
 
@@ -31,12 +31,12 @@ var START_POSITION = 0;
 var PLAYER_MAX = 35;
 var PLAYER_MIN = 0;
 
-var PLAYER_POS_X_INITIAL = 45;
+var PLAYER_POS_X_INITIAL = 300;
 var PLAYER_POS_Y_INITIAL = 150;
 var GRAVITY_Y_AIR = 0.08;
 var GRAVITY_Y_WATER = 0.01;
-var GRAVITY_X_WATER = 0.1;
 var WAVE_POSITION = 225;
 var PAUSED = 80;
 
 var LOOP_BREAKPOINTS = [27, 18, 9];
+//var Y_VALUE_ANIMAL = [355, game.canvas.height-150, 290, game.canvas.height-100]
