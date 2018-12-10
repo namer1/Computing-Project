@@ -7,13 +7,14 @@ var startScreen = {
         var bg = new Image();
         bg.src = START_SCREEN_BG;
         this.rectStart = {
-            x : 100, y : 100, w: 100, h: 100
+            x : this.canvas.width/4, y : this.canvas.height/4, w: 100, h: 100
         };
         this.rectLogOut = {
-            x : 500, y : 100, w: 100, h: 100
+            x : (3*this.canvas.width)/4, y : this.canvas.height/4, w: 100, h: 100
         };
         server.getRecord().then(function(coordinates){
-            player.ghostplayer = coordinates
+            player.ghostplayer = coordinates;
+            console.log(coordinates); // coordinates are not being sent --> uploaded bt database but JS does nothing
         });
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);

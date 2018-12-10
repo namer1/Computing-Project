@@ -21,6 +21,8 @@ var server = {
         })
     },
     getRecord : function(){
+        console.log("Hello"); // the function is being called upon and loaded properly
+        // something in the fetch function does not work
         return fetch("http://localhost/php/getrecord.php").then((response) => JSON.stringify(response));
     }
 }
