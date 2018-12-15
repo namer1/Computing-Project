@@ -7,7 +7,7 @@ var startScreen = {
         var bg = new Image();
         bg.src = START_SCREEN_BG;
         this.rectStart = {
-            x : this.canvas.width/4, y : this.canvas.height/4, w: 100, h: 100
+            x : this.canvas.width/20, y : this.canvas.height/4, w: 100, h: 100
         };
         this.rectLogOut = {
             x : (3*this.canvas.width)/4, y : this.canvas.height/4, w: 100, h: 100

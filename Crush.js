@@ -20,6 +20,6 @@ var crush = {
     crushBedrock : function(){
         if(player.y >= game.canvas.height-70){
             gameOver.over()
-        } // if teh player has reached the bedrock at the bottom of the screen, then he will crush and lose
+        } // if the player has reached the bedrock at the bottom of the screen, then he will crush and lose
     }
 }
