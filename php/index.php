@@ -13,7 +13,7 @@ $all_scores = $database->query(
     UNION
     (SELECT users.username, games.user_id, games.points, games.level FROM
     users JOIN games ON users.user_id = games.user_id
-    WHERE users.user_id = ".$_SESSION['user_id'].".
+    WHERE users.user_id = ".$_SESSION['user_id']."
     ORDER BY points DESC LIMIT 1)"); //DESC means in biggest to smallest (descending)
 
 $to_print = [];
