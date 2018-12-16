@@ -28,6 +28,7 @@ var player = {
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
         this.record = [];
+        this.userData = [];
         
     },
     changeImage : function(newImage){

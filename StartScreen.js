@@ -14,8 +14,10 @@ var startScreen = {
         };
         server.getRecord().then(function(coordinates){
             player.ghostplayer = coordinates;
-            console.log(coordinates); // coordinates are not being sent --> uploaded bt database but JS does nothing
         });
+        server.getUserStat().then(function(data){
+            player.userData = data;
+        })
         bg.onload = function () {
             render.drawImage(bg,0,0,window.innerWidth, window.innerHeight);
             render.font = "30px Arial";

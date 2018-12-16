@@ -21,8 +21,9 @@ var server = {
         })
     },
     getRecord : function(){
-        console.log("Hello"); // the function is being called upon and loaded properly
-        // something in the fetch function does not work
-        return fetch("http://localhost/php/getrecord.php").then((response) => JSON.stringify(response));
+        return fetch("http://localhost/php/getrecord.php").then((response) => response.json());//.json() takes a string and convert to JSON form
+    },
+    getUserStat : function(){
+        return fetch("http://localhost/php/userStat.php").then((response) => response.json());
     }
 }
