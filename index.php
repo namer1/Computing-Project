@@ -37,9 +37,14 @@ session_start();
             echo  "<script>startScreen.display()</script>";
         }
         else{
+            if($_SESSION["login_msg"]){
+                echo $_SESSION["login_msg"]."<br>";
+                $_SESSION["login_msg"] = false;
+                session_destroy();
+            }
             echo "<form method=\"POST\" action=\"php/login.php\">
-            <input type=\"text\" name=\"username\" id=\"username\">
-            <input type=\"password\" name=\"password\" id=\"password\">
+            <input placeholder=\"username\" type=\"text\" name=\"username\" id=\"username\">
+            <input placeholder=\"password\" type=\"password\" name=\"password\" id=\"password\">
             <input type=\"submit\" value=\"login\" id=\"button\">
             </form>
             <a href=\"register.html\">click here to regitser</a>";
