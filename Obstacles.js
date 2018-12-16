@@ -10,28 +10,28 @@ class Obstacle { // everything will be run each time for every animal
             this.i = 0
             this.image = new Image();
             this.image.src = `${OBSTACLES}/0.png`;
-            this.y = 355 //Y_VALUE_ANIMAL[i];
+            this.y = 355;
             break;
 
             case 1:
             this.i = 1
             this.image = new Image();
             this.image.src = `${OBSTACLES}/1.png`;
-            this.y = game.canvas.height-150 //Y_VALUE_ANIMAL[i];
+            this.y = game.canvas.height-150;
             break;
 
             case 2:
             this.i = 2
             this.image = new Image();
             this.image.src = `${OBSTACLES}/2.png`;
-            this.y = 290 //Y_VALUE_ANIMAL[i];
+            this.y = 290;
             break;
 
             case 3:
             this.i = 3
             this.image = new Image();
             this.image.src = `${OBSTACLES}/3.png`;
-            this.y = game.canvas.height-100 //Y_VALUE_ANIMAL[i];
+            this.y = game.canvas.height-100;
             break;
         }
         // This statement will allow the game to randomly choose one of the pictures for the game to load as the obstacles

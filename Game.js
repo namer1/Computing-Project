@@ -10,7 +10,7 @@ var game = {
         window.addEventListener("resize", startScreen.calculateCanvas.bind(startScreen))
         scoring.init();
     },
-    startLevel: function() { // happens at the begnning of every level
+    startLevel: function() { // happens once at the begnning of every level
         if (this.currentLvl < lvls.length-1){ // check how many more levels left in the game
             this.currentLvl++; // add 1 to the level so that the next time the function is ran, the game will load the next level
             background.init();
@@ -19,7 +19,10 @@ var game = {
                 crush.init();
             } // makes sure to check if the crushing wave should load at the current level
             this.obstacles = []; // making a list so that there will be able to be more than one obstacle at a time
-            this.obstacles.push(new Obstacle()); // loads the obstacles to the list
+            this.obstacles.push(new Obstacle());
+            this.addOb = setInterval(function(){
+                this.obstacles.push(new Obstacle())
+            }.bind(this), 10000); // loads the obstacles to the list
             player.x = PLAYER_POS_X_INITIAL; player.y = PLAYER_POS_Y_INITIAL; player.currentImg = START_POSITION;
             player.speedY = 0; player.speedX = 0.2; // resets the position of the player at the begining of every level
         }
@@ -45,6 +48,7 @@ var game = {
             o.move(); // keep the obstacle moveing
             o.collisionTest()
         })
+        
         player.recordChanges(); // used to upload the x, y & current image to the list which then will be uploaded to the databse i JSON form
         player.ghostplayerCount++; // this is used to tell the game to move the next set of coordinates in the list
 
@@ -73,7 +77,7 @@ var game = {
         // I am switching between the 2 pictures and therefore, making the game looks mroe realistic
 
         this.obstacles.forEach(function(o){
-            this.render.drawImage(o.image, 0,0, o.image.width, o.image.height, o.x, o.y, o.image.width, o.image.height);
+            this.render.drawImage(o.image, 0,0, o.image.width, o.image.height, o.x, o.y + (background.waveLvl - WAVE_POSITION), o.image.width, o.image.height);
         }.bind(this)) // here I am drawing the obstacles. there are no set numbers because each picutre has a different stting and therefore,
                       // will need to be drawn elsewehre
         

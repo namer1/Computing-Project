@@ -36,12 +36,16 @@ var timer = {
         if (this.paused){
             this.start();
             this.paused = false;
+            game.addOb = setInterval(function(){
+                game.obstacles.push(new Obstacle())
+            }, 10000);
             game.gameLoop = setInterval(game.draw.bind(game), 20); // 20 miliseconds per interval. BIND connects to the game variable
             game.backgroundSwitcher = setInterval(background.switch.bind(background), 200); // for the change in the waves
         }
         else{
             this.stop();
             this.paused = true;
+            clearInterval(game.addOb)
             clearInterval(game.gameLoop);
             clearInterval(game.backgroundSwitcher);
         }
