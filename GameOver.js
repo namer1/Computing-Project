@@ -33,8 +33,8 @@ var gameOver ={
         // 3 collumns for the table, the player, points and level
         // this is all collected using an SQL query in the index.php file in the php folder
         render.fillText("Player", this.canvas.width/2 - 400, 100);
-        render.fillText("Points", this.canvas.width/2 - 245, 100);
-        render.fillText("Level", this.canvas.width/2 - 100, 100);
+        render.fillText("Points", this.canvas.width/2 - 200, 100);
+        render.fillText("Level", this.canvas.width/2 - 50, 100);
         for (let index = 0; index < list.length; index++) { // starts a for loop to check each row of data that was collected form the query mentioned above
             const element = list[index]; // element is each row we go through
             if(element.selected){ 
@@ -49,8 +49,8 @@ var gameOver ={
             }
             // draws the information under the correct collumn
             render.fillText(element.username, this.canvas.width/2 - 400, 150 + 55*index)
-            render.fillText(element.points, this.canvas.width/2 - 245, 150 + 55*index)
-            render.fillText(element.level, this.canvas.width/2 - 100, 150 + 55*index)
+            render.fillText(element.points, this.canvas.width/2 - 200, 150 + 55*index)
+            render.fillText(element.level, this.canvas.width/2 - 50, 150 + 55*index)
         }
     },
     checkStart: function(event) { // only happens if the player clicks the mouse 

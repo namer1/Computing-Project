@@ -4,7 +4,7 @@ var lvls = [{
     background2: BACKGROUND_MORN2,
     day: MORN_OBJECTS,
     wave: WAVE_CRUSH_MORN,
-    shouldLoadWave: true,
+    shouldLoadWave: false,
     time: 30,
     waveRandom : 15000,
     loadShadow : false,

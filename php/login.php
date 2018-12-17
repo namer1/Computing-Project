@@ -8,7 +8,7 @@ $password = $_POST["password"];
 
 $find_user = $database->query("SELECT user_id, password FROM users WHERE username='$username'"); // checks if username matches
 if ($find_user->num_rows == 0){ // iser doesn't exist
-    $_SESSION["login_msg"] = "Wrong username";
+    $_SESSION["login_msg"] = "Username does not exist";
     header("Location: /");
 }
 else{ // user exists

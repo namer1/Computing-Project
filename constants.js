@@ -1,4 +1,6 @@
 var BACKGROUND_SCROLL_X = 5;
+var INITIAL_SPEED_X = 1;
+var INITIAL_SPEED_Y = 0;
 var START_SCREEN_BG = 'sprites/Background/startScreen/startScreenBackground.png';
 var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';
 
@@ -39,4 +41,3 @@ var WAVE_POSITION = 225;
 var PAUSED = 80;
 
 var LOOP_BREAKPOINTS = [27, 18, 9];
-//var Y_VALUE_ANIMAL = [355, game.canvas.height-150, 290, game.canvas.height-100]
