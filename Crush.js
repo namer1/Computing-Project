@@ -8,7 +8,7 @@ var crush = {
         // --> make it look like there is a tunnel being made for the plaeyr to surf in
     },
     move : function(){
-        this.x += background.currentScrollSpeed/5; // moves the wave across the x-axis at half the rate that the waves move in but in the opposite direction
+        this.x += background.currentScrollSpeed/5 * (1 + userCalc.difficulty); // moves the wave across the x-axis at half the rate that the waves move in but in the opposite direction
     },
     isUnderWave : function(){
         if (this.crushing) {

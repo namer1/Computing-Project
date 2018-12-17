@@ -37,21 +37,11 @@ class Obstacle { // everything will be run each time for every animal
         // This statement will allow the game to randomly choose one of the pictures for the game to load as the obstacles
     }
     move(){
-        this.x -= 5;
+        this.x -= 5 * (1 + userCalc.difficulty);
         this.rect ={
             x: this.x, y: this.y, w:this.image.width, h: this.image.height
         } // the obs
     }
-    // scrollY(){ // MIGHT NEED TO REMOVE AND CHAGNE BACK TO NORMAL
-    //     if(player.y < WAVE_POSITION){
-    //         this.y = this.y*2 - player.y;            
-    //     } // if the player is above the set position of the wave, then the game will lower the wave so it looks like the player is the 
-    //       //focus of attention and not the wave
-    //     else{
-    //         this.y = Y_VALUE_ANIMAL[i]; // if the player is in the water then the wave levels will be as set in the constant page
-    //     }
-    //     // makes it so that the player is the focus of the camera instead of the waves
-    // }
     collisionTest(){
         if (this.hasCollidedX() && this.hasCollidedY()) {
                 gameOver.over();

@@ -27,8 +27,8 @@ var background = {
         var offSet = (player.currentImg >= 27) ? 36 - player.currentImg : player.currentImg; // Ternary Operator--> instead of an if statement (condition) ? if : else;
         offSet = (player.currentImg > 9) ? 0 : offSet;
         // get 0 - 9 in all cases of player in water
-        this.currentScrollSpeed = BACKGROUND_SCROLL_X/(offSet/9 + 1);
-        this.x = this.x - this.currentScrollSpeed; 
+        this.currentScrollSpeed = BACKGROUND_SCROLL_X/(offSet/18 + 1);
+        this.x = this.x - (this.currentScrollSpeed * (1 + userCalc.difficulty)); 
         // this will make the wave move across the screen with the value of BACKGROUND_SCROLL_X that is defined in the constants page
     },
     scrollY : function(){

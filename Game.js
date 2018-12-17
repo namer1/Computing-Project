@@ -9,6 +9,7 @@ var game = {
         player.keyPress();
         window.addEventListener("resize", startScreen.calculateCanvas.bind(startScreen))
         scoring.init();
+        userCalc.readUserData();
     },
     startLevel: function() { // happens once at the begnning of every level
         if (this.currentLvl < lvls.length-1){ // check how many more levels left in the game
@@ -18,13 +19,15 @@ var game = {
             if (lvls[game.currentLvl].shouldLoadWave) {
                 crush.init();
             } // makes sure to check if the crushing wave should load at the current level
+            userCalc.readUserData();
             this.obstacles = []; // making a list so that there will be able to be more than one obstacle at a time
             this.obstacles.push(new Obstacle());
+            this.time = 11000 - ( 10000 * userCalc.difficulty);
             this.addOb = setInterval(function(){
                 this.obstacles.push(new Obstacle())
-            }.bind(this), 10000); // loads the obstacles to the list
+            }.bind(this), this.time); // loads the obstacles to the list
             player.x = PLAYER_POS_X_INITIAL; player.y = PLAYER_POS_Y_INITIAL; player.currentImg = START_POSITION;
-            player.speedY = 0; player.speedX = 0.2; // resets the position of the player at the begining of every level
+            player.speedY = INITIAL_SPEED_Y; player.speedX = INITIAL_SPEED_X; // resets the position of the player at the begining of every level
         }
         else{
             gameOver.over(); // if there are no more levels at the ed of the previous level, then the game will take the
@@ -39,6 +42,9 @@ var game = {
         player.enterWater();
         if (player.inWater && crush.isUnderWave()){
             scoring.inWave();
+            if (player.y <= WAVE_POSITION){
+                gameOver.over()
+            }
         }
         crush.crushBedrock();
         background.scrollY();
@@ -93,7 +99,7 @@ var game = {
             if (coordinate && coordinate.x && coordinate.y && coordinate.imgNum != undefined){ // only if they exist will this happen -->
                                                                                                // making it so that even if the ghost player runs out in the middle of the game, there won't be an error
                 this.render.globalAlpha = 0.5; // transparancy levels of the ghost player
-                this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, coordinate.y); // draws the ghost player with the data collected 
+                this.render.drawImage(player.images[coordinate.imgNum], coordinate.x, coordinate.y + (background.waveLvl - WAVE_POSITION)); // draws the ghost player with the data collected 
                 this.render.globalAlpha = 1; // reutrns the transparency to normal so that it won't affect the normal player
             }
             if(lvls[game.currentLvl].loadShadow){ // this means that it will happen only at the 3rd level

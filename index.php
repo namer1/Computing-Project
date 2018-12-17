@@ -31,6 +31,7 @@ session_start();
         <script src="StartScreen.js"></script>
         <script src="Server.js"></script>
         <script src="GameOver.js"></script>
+        <script src="userCalc.js"></script>
 
         <?php
         if($_SESSION["user_id"]){
@@ -39,7 +40,6 @@ session_start();
         else{
             if($_SESSION["login_msg"]){
                 echo $_SESSION["login_msg"]."<br>";
-                $_SESSION["login_msg"] = false;
                 session_destroy();
             }
             echo "<form method=\"POST\" action=\"php/login.php\">

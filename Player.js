@@ -1,12 +1,13 @@
 var player = {
     ghostplayer : [],
+    userData : [],
     ghostplayerCount : 0,
     init : function(number){
         this.inWater = false;
         this.width = 80;
         this.height = 80;
-        this.speedY = 0;
-        this.speedX = 1;
+        this.speedY = INITIAL_SPEED_Y;
+        this.speedX = INITIAL_SPEED_X;
         this.x = PLAYER_POS_X_INITIAL;
         this.y = PLAYER_POS_Y_INITIAL;
         this.images = [];
@@ -28,7 +29,6 @@ var player = {
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`;
         }
         this.record = [];
-        this.userData = [];
         
     },
     changeImage : function(newImage){
@@ -98,9 +98,9 @@ var player = {
             scoring.inAir();
             this.inWater = false;
         }
-		//if (crush.isUnderWave == true && this.y == WAVE_POSITION){
-			//gameOver.over()
-		//}
+		if (crush.isUnderWave() && this.y == WAVE_POSITION){
+			gameOver.over()
+		}
     },
     loop : function(){
         for (var i=0; i<LOOP_BREAKPOINTS.length; i++) {
@@ -115,7 +115,6 @@ var player = {
     },
     recordChanges : function(){
         this.record.push({x:this.x, y:this.y, imgNum: this.currentImg});
-        //console.log({x:this.x, y:this.y, imgNum: this.currentImg});
-        // DOES WORK
+
     }
 }
