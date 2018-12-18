@@ -3,19 +3,19 @@ var startScreen = {
         this.started = false;
         this.canvas = document.getElementById("Game");
         this.calculateCanvas();
-        var render = this.canvas.getContext("2d");
-        var bg = new Image();
-        bg.src = START_SCREEN_BG;
-        this.rectStart = {
+        var render = this.canvas.getContext("2d"); //allows to draw to the screen
+        var bg = new Image(); // creates an image variable 
+        bg.src = START_SCREEN_BG; // the locarion of the image
+        this.rectStart = { // creates a rectangle for the start button
             x : this.canvas.width/20, y : this.canvas.height/4, w: 100, h: 100
         };
-        this.rectLogOut = {
+        this.rectLogOut = { // creates a rectangle for the logout button
             x : (3*this.canvas.width)/4, y : this.canvas.height/4, w: 100, h: 100
         };
-        server.getRecord().then(function(coordinates){
+        server.getRecord().then(function(coordinates){ // loads the ghost player coordiantes from the database and then puts them in a list
             player.ghostplayer = coordinates;
         });
-        server.getUserStat().then(function(data){
+        server.getUserStat().then(function(data){ // loads the user data for the linear regression from the database and then puts them in a list
             player.userData = data;
         })
         bg.onload = function () {

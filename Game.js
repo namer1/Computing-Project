@@ -9,7 +9,6 @@ var game = {
         player.keyPress();
         window.addEventListener("resize", startScreen.calculateCanvas.bind(startScreen))
         scoring.init();
-        userCalc.readUserData();
     },
     startLevel: function() { // happens once at the begnning of every level
         if (this.currentLvl < lvls.length-1){ // check how many more levels left in the game
