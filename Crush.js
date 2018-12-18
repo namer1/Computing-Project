@@ -4,11 +4,12 @@ var crush = {
                                                                          // as it becomes harder, the wave will start closer to the player
         this.crushing = new Image();
         this.crushing.src = lvls[game.currentLvl].wave;
-        // this loads the image of teh wave tha will come torwads the player and will attempt to crush him 
+        // this loads the image of the wave that will come torwads the player and will attempt to crush him 
         // --> make it look like there is a tunnel being made for the plaeyr to surf in
     },
     move : function(){
-        this.x += background.currentScrollSpeed/5 * (1 + userCalc.difficulty); // moves the wave across the x-axis at half the rate that the waves move in but in the opposite direction
+        this.x += background.currentScrollSpeed/5 * (1 + userCalc.difficulty); 
+        // move against the direction of the background in the speed according to the player's current image and difficulty
     },
     isUnderWave : function(){
         if (this.crushing) {

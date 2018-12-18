@@ -18,10 +18,10 @@ var game = {
             if (lvls[game.currentLvl].shouldLoadWave) {
                 crush.init();
             } // makes sure to check if the crushing wave should load at the current level
-            userCalc.readUserData();
+            userCalc.readUserData(); // updates the difficulty function of the game
             this.obstacles = []; // making a list so that there will be able to be more than one obstacle at a time
             this.obstacles.push(new Obstacle());
-            this.time = 11000 - ( 10000 * userCalc.difficulty);
+            this.time = 11000 - ( 10000 * userCalc.difficulty); // time function to know how long between the obstacles (in milisecods)
             this.addOb = setInterval(function(){
                 this.obstacles.push(new Obstacle())
             }.bind(this), this.time); // loads the obstacles to the list

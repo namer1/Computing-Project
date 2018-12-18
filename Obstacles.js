@@ -6,6 +6,7 @@ class Obstacle { // everything will be run each time for every animal
             x: 0, y: 0, w: 0, h: 0 
         } // this will be a rectangle that will follow the obstacles
         switch (this.type) {
+            // each case is a different image --> determined by this.type variable
             case 0:
             this.i = 0
             this.image = new Image();
@@ -37,10 +38,10 @@ class Obstacle { // everything will be run each time for every animal
         // This statement will allow the game to randomly choose one of the pictures for the game to load as the obstacles
     }
     move(){
-        this.x -= 5 * (1 + userCalc.difficulty);
+        this.x -= 5 * (1 + userCalc.difficulty); // move the obstacles on the x-axis according to the difficulty of the game
         this.rect ={
             x: this.x, y: this.y, w:this.image.width, h: this.image.height
-        } // the obs
+        } // a rectangle that is supposed to follow the obstacles when drawn
     }
     collisionTest(){
         if (this.hasCollidedX() && this.hasCollidedY()) {

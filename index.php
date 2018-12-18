@@ -16,8 +16,9 @@ session_start();
         </style>
     </head>
     <body style="margin: 0%">
-        <canvas id="Game"></canvas>
-        <script src="constants.js"></script>
+        <canvas id="Game"></canvas> <!--  when defining canvas in js files, it will connect to this-->
+        <!-- each script line is another file that will be needed to run the game using a different function that is inbuilt in each file -->
+        <script src="constants.js"></script> 
         <script src="Levels.js"></script>
         <script src="Obstacles.js"></script>
         <script src="Player.js"></script>
@@ -34,12 +35,12 @@ session_start();
         <script src="userCalc.js"></script>
 
         <?php
-        if($_SESSION["user_id"]){
-            echo  "<script>startScreen.display()</script>";
+        if($_SESSION["user_id"]){ // if user is already connected or now connected:
+            echo  "<script>startScreen.display()</script>"; // go to start screen
         }
         else{
-            if($_SESSION["login_msg"]){
-                echo $_SESSION["login_msg"]."<br>";
+            if($_SESSION["login_msg"]){ // if there is amessage for the user
+                echo $_SESSION["login_msg"]."<br>"; // show it to the user then go to a new line
                 session_destroy();
             }
             echo "<form method=\"POST\" action=\"php/login.php\">
@@ -48,9 +49,9 @@ session_start();
             <input type=\"submit\" value=\"login\" id=\"button\">
             </form>
             <a href=\"register.html\">click here to regitser</a>";
-
+            // creates the buttons that will have the username and password & the button that is incharge of log in
+            // a link to the register page if necessary
         }
         ?>
-        
     </body>
 </html>
