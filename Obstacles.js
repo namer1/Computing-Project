@@ -8,28 +8,24 @@ class Obstacle { // everything will be run each time for every animal
         switch (this.type) {
             // each case is a different image --> determined by this.type variable
             case 0:
-            this.i = 0
             this.image = new Image();
             this.image.src = `${OBSTACLES}/0.png`;
             this.y = 355;
             break;
 
             case 1:
-            this.i = 1
             this.image = new Image();
             this.image.src = `${OBSTACLES}/1.png`;
             this.y = game.canvas.height-150;
             break;
 
             case 2:
-            this.i = 2
             this.image = new Image();
             this.image.src = `${OBSTACLES}/2.png`;
             this.y = 290;
             break;
 
             case 3:
-            this.i = 3
             this.image = new Image();
             this.image.src = `${OBSTACLES}/3.png`;
             this.y = game.canvas.height-100;
