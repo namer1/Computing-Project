@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-unset($_SESSION["user_id"]);
+// if logout button is pressed
+unset($_SESSION["user_id"]); // stop the signning in session
 session_destroy();
-header("Location: /");
+header("Location: /"); // send back to the original page
 ?>

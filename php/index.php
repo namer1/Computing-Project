@@ -15,6 +15,9 @@ $all_scores = $database->query(
     users JOIN games ON users.user_id = games.user_id
     WHERE users.user_id = ".$_SESSION['user_id']."
     ORDER BY points DESC LIMIT 1)"); //DESC means in biggest to smallest (descending)
+    // query takes the username, user_id, points and level from the database. the data taken for each user is the max points with the corresponding level
+    // then the data kept is the best 10 scores in the database. After finding he best 10 players in the game, if the current user's score is
+    // not in the top 10, then the bes score of the user is also added to the data that is sent to the game
 
 $to_print = [];
 while ($row = $all_scores->fetch_assoc()) {
