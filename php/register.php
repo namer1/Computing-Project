@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$database = new mysqli("localhost", "root", "123567", "surfing");
+require_once 'database.php';
 
 $username = $_POST["username"];
 $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // puts the passwords that hte user has inputted into the registration form in hased form

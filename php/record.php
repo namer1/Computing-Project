@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$database = new mysqli("localhost", "root", "123567", "surfing");
+require_once 'database.php';
 $file = $_POST["file"];
 
 var_dump($file); // everything in the variable

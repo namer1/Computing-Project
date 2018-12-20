@@ -1,7 +1,7 @@
 <?php
 session_start();//the entire time on browser
 header('Access-Control-Allow-Origin: *');
-$database = new mysqli("localhost", "root", "123567", "surfing");
+require_once 'database.php';
 
 $username = $_POST["username"];
 $password = $_POST["password"];

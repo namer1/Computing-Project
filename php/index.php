@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Access-Control-Allow-Origin: *');
-$database = new mysqli("localhost", "root", "123567", "surfing");
+require_once 'database.php';
 
 $all_scores = $database->query(
     "(SELECT users.username, games.user_id, games.points, games.level FROM
