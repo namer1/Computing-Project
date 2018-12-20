@@ -6,7 +6,7 @@ var lvls = [{
     day: MORN_OBJECTS, // morning sky objects
     wave: WAVE_CRUSH_MORN, // the image of the crushing wave
     shouldLoadWave: false, // tells the game to not load the the crushing wave
-    time: 30, // how long the levels is
+    time: 10, // how long the levels is
     waveRandom : 15000, // how much back the crushing wave should appear
     loadShadow : false, // tells the game if to load the shadows
 }, {
@@ -17,7 +17,7 @@ var lvls = [{
     day: NOON_OBJECTS, // afternoon sky objects
     wave: WAVE_CRUSH_NOON, // the image of the crushing wave
     shouldLoadWave: true, // tells the game to not load the the crushing wave
-    time: 60, // how long the levels is
+    time: 10, // how long the levels is
     waveRandom : 10000, // how much back the crushing wave should appear
     loadShadow : false, // tells the game if to load the shadows
 }, {
@@ -28,7 +28,7 @@ var lvls = [{
     day: NIGHT_OBJECTS, // night sky objects
     wave: WAVE_CRUSH_NIGHT, // the image of the crushing wave
     shouldLoadWave: true, // tells the game to not load the the crushing wave
-    time: 90, // how long the levels is
+    time: 10, // how long the levels is
     waveRandom : 7500, // how much back the crushing wave should appear
     loadShadow : true, // tells the game if to load the shadows
 }]
