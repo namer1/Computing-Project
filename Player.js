@@ -22,12 +22,6 @@ var player = {
                 if (i == number - 1){ // once the images are loaded
                     game.init();
                     game.startLevel();
-                    if(lvls[game.currentLvl].loadShadow){ // loads the images only at the 3rd level
-                        this.shadow = new Image();
-                        this.shadow.src = SHADOW;
-                        this.moon = new Image();
-                        this.moon.src = MOON;
-                    }
                 }
             }.bind(this, i);
             this.images[i].src = `sprites/Surfer/NEW/${i}.png`; // tells the game where the images are stored

@@ -25,6 +25,12 @@ var game = {
             this.addOb = setInterval(function(){
                 this.obstacles.push(new Obstacle())
             }.bind(this), this.time); // loads the obstacles to the list
+            if(lvls[game.currentLvl].loadShadow){ // loads the images only at the 3rd level
+                this.shadow = new Image();
+                this.shadow.src = SHADOW;
+                this.moon = new Image();
+                this.moon.src = MOON;
+            }
             player.x = PLAYER_POS_X_INITIAL; player.y = PLAYER_POS_Y_INITIAL; player.currentImg = START_POSITION;
             player.speedY = INITIAL_SPEED_Y; player.speedX = INITIAL_SPEED_X; // resets the position of the player at the begining of every level
         }
@@ -102,9 +108,9 @@ var game = {
                 this.render.globalAlpha = 1; // reutrns the transparency to normal so that it won't affect the normal player
             }
             if(lvls[game.currentLvl].loadShadow){ // this means that it will happen only at the 3rd level
-                this.render.drawImage(player.shadow, 0, 0, player.shadow.width, player.shadow.height, -1350 + player.x, -1300 + player.y - PLAYER_POS_Y_INITIAL, player.shadow.width, player.shadow.height)
+                this.render.drawImage(this.shadow, 0, 0, this.shadow.width, this.shadow.height, -1350 + player.x, -1300 + player.y - PLAYER_POS_Y_INITIAL, this.shadow.width, this.shadow.height)
                 // drawing the shadows so that the cirlce that will allow the player to see what is aroud him is on hime with in the centre of it
-                this.render.drawImage(player.moon, game.canvas.width - 300, 20) // this will draw the moon above the shadows so that the player can see the moon
+                this.render.drawImage(this.moon, game.canvas.width - 300, 20) // this will draw the moon above the shadows so that the player can see the moon
             }
             if (crush.crushing) { // this draws the crushing wave to the screen
                 this.render.drawImage(crush.crushing,0,0,crush.crushing.width,crush.crushing.height,crush.x,background.waveLvl,crush.crushing.width,this.canvas.height - WAVE_POSITION);
