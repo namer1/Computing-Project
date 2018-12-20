@@ -22,7 +22,7 @@ var BACKGROUND_NIGHT2 = 'sprites/Background/gameScreen/night/Background(2).png';
 var WAVE_CRUSH_NIGHT =  'sprites/Background/gameScreen/night/crushingWave.png';
 var NIGHT_OBJECTS ='sprites/Background/gameScreen/night/nightObjects.png';
 var MOON ='sprites/Background/gameScreen/night/moon.png';
-var SHADOW = 'sprites/Surfer/darkess.png';
+var SHADOW = 'sprites/Background/gameScreen/night/darkess.png';
 
 var OBSTACLES = 'sprites/Background/gameScreen/obstacles';
 
