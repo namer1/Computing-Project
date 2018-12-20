@@ -102,7 +102,7 @@ var game = {
                 this.render.globalAlpha = 1; // reutrns the transparency to normal so that it won't affect the normal player
             }
             if(lvls[game.currentLvl].loadShadow){ // this means that it will happen only at the 3rd level
-                this.render.drawImage(player.shadow, 0, 0, player.shadow.width, player.shadow.height, -1350 + player.x - PLAYER_POS_X_INITIAL, -1300 + player.y - PLAYER_POS_Y_INITIAL, player.shadow.width, player.shadow.height)
+                this.render.drawImage(player.shadow, 0, 0, player.shadow.width, player.shadow.height, -1350 + player.x, -1300 + player.y - PLAYER_POS_Y_INITIAL, player.shadow.width, player.shadow.height)
                 // drawing the shadows so that the cirlce that will allow the player to see what is aroud him is on hime with in the centre of it
                 this.render.drawImage(player.moon, game.canvas.width - 300, 20) // this will draw the moon above the shadows so that the player can see the moon
             }
