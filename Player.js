@@ -43,7 +43,7 @@ var player = {
                     this.speedY = (ARROW_SPEED[this.currentImg]  + this.speedY)/2; // cahnge the speed of y according to the current image
                 }
             }
-            if (event.keyCode == RIGHT_ARROW){ // if hte right arrow is pressed
+            if (event.keyCode == RIGHT_ARROW){ // if the right arrow is pressed
                 this.nextImage(); // use function next image
                 if (this.inWater){ // if the player is in the water
                     this.speedY = (ARROW_SPEED[this.currentImg]  + this.speedY)/2; // cahnge the speed of y according to the current image

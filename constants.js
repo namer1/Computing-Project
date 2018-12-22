@@ -1,5 +1,5 @@
 var BACKGROUND_SCROLL_X = 5;
-var INITIAL_SPEED_X = 1;
+var INITIAL_SPEED_X = 0.5;
 var INITIAL_SPEED_Y = 0;
 var START_SCREEN_BG = 'sprites/Background/startScreen/startScreenBackground.png';
 var END_SCREEN_BG = 'sprites/Background/overScreen/overScreenBackground.png';

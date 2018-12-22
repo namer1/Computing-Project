@@ -29,7 +29,7 @@ var background = {
         // get 0 - 9 in all cases of player in water
         this.currentScrollSpeed = BACKGROUND_SCROLL_X/(offSet/18 + 1); 
         // calculate a variable in the movement of the background according to the player's current image
-        this.x = this.x - (this.currentScrollSpeed * (1 + userCalc.difficulty)); 
+        this.x = this.x - (this.currentScrollSpeed * (1 + userCalc.difficulty));
         // this will move the background according to the player's current image and the difficulty
     },
     scrollY : function(){
