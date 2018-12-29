@@ -21,7 +21,7 @@ var game = {
             userCalc.readUserData(); // updates the difficulty function of the game
             this.obstacles = []; // making a list so that there will be able to be more than one obstacle at a time
             this.obstacles.push(new Obstacle());
-            this.time = 11000 - ( 10000 * userCalc.difficulty); // time function to know how long between the obstacles (in milisecods)
+            this.time = 11000 - ( 10000 * userCalc.difficulty); // time function to know how long between the obstacles (in milliseconds)
             this.addOb = setInterval(function(){
                 this.obstacles.push(new Obstacle())
             }.bind(this), this.time); // loads the obstacles to the list
