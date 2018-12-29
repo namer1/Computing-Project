@@ -17,7 +17,7 @@ var scoring = {
         clearInterval(this.timeAirInterval); // resests the clock
         this.timeAir = 0;
     },
-    tickAir : function(){
+    tickAir : function(){ // used in function inAir()
         this.timeAir += 1 // add 1 for every second it is run
     },
     inWave : function(){ // when player is under the crushing wave
@@ -30,7 +30,7 @@ var scoring = {
         this.underWaveInterval = false; 
         this.underWaveTime = 0;
     },
-    tickWave : function(){
+    tickWave : function(){ // used in function inWave()
         if (crush.isUnderWave()) { // if player is under the crushig wave
             this.score += 5 // add 5 to score after every 3 secods
         }
