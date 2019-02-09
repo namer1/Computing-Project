@@ -32,6 +32,7 @@ var player = {
     keyPress : function(){ // when a key is being pressed
         document.addEventListener("keydown", function(event){ // detects that a key was pressed
             if (event.keyCode == PAUSED){ // this is the pause button (letter p)
+                console.log("The P key was pressed: ", event.keyCode == PAUSED);
                 timer.pause(); // the pause function in timer
             }
             if (timer.paused){ // if teh paused variable is true

@@ -25,7 +25,7 @@ var startScreen = {
             render.fillText("Start", this.rectStart.x + this.rectStart.w/2, this.rectStart.y + this.rectStart.h/2); 
             render.fillText("log out", this.rectLogOut.x + this.rectLogOut.w/2, this.rectLogOut.y + this.rectLogOut.h/2);
             document.addEventListener('click', this.checkStart.bind(this)); // when the buttons are pressed
-            document.addEventListener('keydown', function(event){ 
+            document.addEventListener('keydown', function(event){
                 if (event.keyCode == 13 || event.keyCode == 32){ // when the space bar or enter key are pressed
                     if (!this.started){ // if the game has not started yet
                         this.started = true; // game has started

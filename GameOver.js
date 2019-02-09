@@ -58,7 +58,7 @@ var gameOver ={
     
         if (p.x >= this.rect.x && p.x <= this.rect.x + this.rect.w &&
             p.y >= this.rect.y && p.y <= this.rect.y + this.rect.h) { // if the mouse is anywehre inside the rectangke that is used for the restart button
-            location.reload(); // the player will be taken back to the start screen
+                location.reload(); // the player will be taken back to the start screen
         }
     },
     getMousePos : function(e) {

@@ -47,7 +47,7 @@ var timer = {
             this.stop(); // stops the clock of the game
             this.paused = true; //game is now paused
             // stop the clocks:
-            clearInterval(game.addOb) 
+            clearInterval(game.addOb); 
             clearInterval(game.gameLoop);
             clearInterval(game.backgroundSwitcher);
         }
